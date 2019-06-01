@@ -492,12 +492,21 @@ pre {
 .cd-nav .cd-primary-nav a {
     font-size: 21px;
     display: inline-block;
+    font-weight: 500;
+    color: white;
 }
 .cd-nav .cd-primary-nav a.selected {
     color: #ffffff;
 }
 .no-touch .cd-nav .cd-primary-nav a:hover {
     color: #ffffff;
+}
+.cd-primary-nav li{
+    font-size: 110%;
+    font-weight: 300;
+    line-height: 1;
+    margin: 0 10px;
+    
 }
 .cd-nav .cd-contact-info {
     margin-top: 20px;
@@ -697,6 +706,7 @@ div.image.desktop > * {
     font-family: 'Playfair Display', sans-serif;
     color: #fff;
     letter-spacing: 2px;
+    line-height: 1.2;
 }
 
 /*===== Paginations =====*/
@@ -1083,7 +1093,10 @@ nav[role="navigation"] {
         right: 40px;
     }
     .cd-nav .cd-navigation-wrapper {
-        padding: 40px;
+        padding: 40px 30px;
+    }
+    .cd-primary-nav li {
+        margin: 0;
     }
     /*===== Projects =====*/
     .projects-feed .project:nth-child(2n) .thumb { float: right; }
@@ -1220,10 +1233,7 @@ nav[role="navigation"] {
         right: 80px;
     }
     .cd-nav .cd-navigation-wrapper {
-        padding: 60px 79px 60px calc(1px + 79px);
-    }
-    .cd-nav .cd-primary-nav a {
-        font-size: 42px;
+        padding: 60px 102px;
     }
     .cd-nav .cd-contact-info li, 
     .cd-nav .cd-contact-info a, 
@@ -1373,9 +1383,6 @@ nav[role="navigation"] {
     .cd-nav .cd-navigation-wrapper {
         padding: 60px 140px 60px calc(58px + 140px);
     }
-    .cd-nav .cd-primary-nav a {
-        font-size: 54px;
-    }
     .cd-nav .cd-contact-info li, 
     .cd-nav .cd-contact-info a, 
     .cd-nav .cd-contact-info span {
@@ -1420,6 +1427,10 @@ nav[role="navigation"] {
     }
 
     /*===== Structures =====*/
+
+    .site-tagline p {
+        font-size: 110%;
+    }
 
     .site-header,
     .site-footer,
