@@ -35,9 +35,11 @@ function init() {
         btn.addEventListener('click', (e) => {
             if (e.target.hasAttribute('data-dismiss') && 
                 e.target.getAttribute('data-dismiss') == 'modal') {
-                const modal = document.querySelector('dialog[open]');
+
+                const modal = document.querySelector('.modal.show');
+                modal.classList.remove('show')
                 main.classList.remove('scale-down')
-                modal.close()
+                
             }
         })
     }
@@ -49,8 +51,8 @@ function openModal(e) {
     if (e.target.hasAttribute('data-toggle') && 
         e.target.getAttribute('data-toggle') == 'modal') {
 
-        const elem = e.target.getAttribute('data-target');
-        document.getElementsByClassName(elem)[0].showModal();
+        const modal = e.target.getAttribute('data-target');
+        document.getElementsByClassName(modal)[0].classList.add('show')
         e.preventDefault();
     }
     main.classList.add('scale-down');
