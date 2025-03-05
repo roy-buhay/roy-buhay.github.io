@@ -1,10 +1,10 @@
 import { FC } from "react";
 
-import man from "../../assets/images/man2.svg";
-import truck from "../../assets/images/truck_2.svg";
-import node from "../../assets/images/node-deer.svg";
-import aws from "../../assets/images/aws-deer.svg";
-import swift from "../../assets/images/swift-deer2.svg";
+import man from "/images/man2.svg";
+import truck from "/images/truck_2.svg";
+import node from "/images/node-deer.svg";
+import aws from "/images/aws-deer.svg";
+import swift from "/images/swift-deer2.svg";
 
 import styles from "./content.module.scss";
 

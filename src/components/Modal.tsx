@@ -33,7 +33,7 @@ export const Modal: FC<Props> = ({ children, customStyle, ...rest }) => {
       aria-labelledby="card"
       tabIndex={-1}
       className="modal__wrapper"
-      onClick={() => closeModal()}
+      onClick={(e) => e.target === e.currentTarget && closeModal()}
     >
       <div className={`modal ${customStyle}`}>
         <Close close={closeModal} />

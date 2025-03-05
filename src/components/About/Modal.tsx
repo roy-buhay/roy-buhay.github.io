@@ -8,8 +8,8 @@ import styles from "./content.module.scss";
 export const AboutModal: FC = () => {
   return (
     <div className={styles.about__container}>
-      <Illustration />
       <Texts />
+      <Illustration />
     </div>
   );
 };

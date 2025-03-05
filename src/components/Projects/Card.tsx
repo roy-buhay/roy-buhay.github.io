@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { PAGE_TYPE, useModal } from "../../context/ModalContext";
 
-import avatar1 from "../../assets/images/avatar-1.svg";
-import avatar2 from "../../assets/images/avatar-2.svg";
-import avatar3 from "../../assets/images/avatar-3.svg";
+import avatar1 from "/images/avatar-1.svg";
+import avatar2 from "/images/avatar-2.svg";
+import avatar3 from "/images/avatar-3.svg";
 
 import appStyle from "../../app.module.scss";
 import styles from "./content.module.scss";

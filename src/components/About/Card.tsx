@@ -1,10 +1,10 @@
 import { FC } from "react";
 import { PAGE_TYPE, useModal } from "../../context/ModalContext";
 
-import man from "../../assets/images/man.svg";
-import node from "../../assets/images/node-deer.svg";
-import aws from "../../assets/images/aws-deer.svg";
-import swift from "../../assets/images/swift-deer.svg";
+import man from "/images/man.svg";
+import node from "/images/node-deer.svg";
+import aws from "/images/aws-deer.svg";
+import swift from "/images/swift-deer.svg";
 
 import appStyle from "../../app.module.scss";
 import styles from "./about.module.scss";

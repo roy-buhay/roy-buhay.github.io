@@ -103,7 +103,7 @@
       width: 100%;
       height: 100%;
       background: -o-linear-gradient(rgba(255, 0, 0, 0), rgb(201, 52, 3)),
-        url("../../../src/assets/images/noise.svg");
+        url("images/noise.svg");
       background: -webkit-gradient(
           linear,
           left top,
@@ -111,9 +111,9 @@
           from(rgba(255, 0, 0, 0)),
           to(rgb(201, 52, 3))
         ),
-        url("../../../src/assets/images/noise.svg");
+        url("images/noise.svg");
       background: linear-gradient(rgba(255, 0, 0, 0), rgb(201, 52, 3)),
-        url("../../../src/assets/images/noise.svg");
+        url("images/noise.svg");
       -webkit-filter: contrast(120%) brightness(100%);
       filter: contrast(120%) brightness(100%);
     }
@@ -136,17 +136,17 @@
 
     @media screen and (min-width: 1024px) {
       & {
-        -webkit-transform: scale(1);
-        -ms-transform: scale(1);
-        transform: scale(1);
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
       }
     }
   }
 
   &__illustration {
-    -webkit-transform: scale(0.95);
-    -ms-transform: scale(0.95);
-    transform: scale(0.95);
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -169,6 +169,7 @@
         margin-left: 0;
         margin-bottom: 0;
         margin-top: 14rem;
+        left: -2rem;
       }
     }
   }
@@ -186,6 +187,7 @@
         margin-top: 4rem;
         overflow-y: auto;
         overflow-x: hidden;
+        padding-left: 4rem;
       }
     }
 
@@ -210,32 +212,44 @@
           font-size: 0.8rem;
           line-height: 1.8;
           margin-top: 1.2rem;
-          margin-bottom: 1rem;
+          margin-bottom: 0.5rem;
         }
       }
 
       & strong {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         font-weight: 300;
         display: block;
         color: white;
-      }
 
-      & small {
-        display: block;
-        color: #94abc2;
-        margin-top: 0.2rem;
-        margin-bottom: 0.5rem;
-        font-size: 0.75rem;
-        font-weight: 300;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.5rem;
+        margin-bottom: 0.2rem;
+
+        & span {
+          display: inline-block;
+          width: 1.5rem;
+          height: 1.5rem;
+          background-color: #225674;
+          border-radius: 0.4rem;
+          margin: 0;
+          overflow: hidden;
+
+          & img {
+            width: 100%;
+            height: 100%;
+          }
+        }
       }
     }
 
     & .date {
       display: block;
-      width: 30%;
+      width: 24%;
       text-transform: uppercase;
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       color: #4f6d88;
       margin-top: 0.2rem;
     }
@@ -250,7 +264,53 @@
       -webkit-box-pack: justify;
       -ms-flex-pack: justify;
       justify-content: space-between;
-      margin-bottom: 2rem;
+      margin-bottom: 4rem;
+
+      & ul {
+        align-items: center;
+        justify-content: flex-start;
+        display: flex;
+        column-gap: 0.4rem;
+        row-gap: 0.2rem;
+        flex-wrap: wrap;
+
+        & li {
+          color: var(--description-color);
+          border-radius: 1rem;
+          font: 300 0.65rem / 1.6 "Martian Mono";
+
+          &:before {
+            content: "•";
+            font-size: 0.4rem;
+            display: inline-block;
+            position: relative;
+            top: -0.1rem;
+            left: 0.1rem;
+          }
+
+          &:first-child {
+            padding-left: 0;
+            min-width: 100%;
+          }
+
+          &:first-child:before,
+          &:nth-child(2):before {
+            display: none;
+          }
+        }
+      }
+
+      & div {
+        flex: 1;
+
+        & small {
+          font-size: 0.6rem;
+          color: #45698d;
+          background-color: #113d67;
+          padding: 0.1rem 0.6rem;
+          border-radius: 1rem;
+        }
+      }
 
       & p {
         margin-top: 0;
@@ -258,7 +318,22 @@
         -ms-flex: 1;
         flex: 1;
         font-size: 0.8rem;
-        color: var(--description-color);
+        color: #94abc2;
+
+        &:nth-of-type(2) {
+          display: flex;
+          column-gap: 0.5rem;
+          row-gap: 0.5rem;
+          flex-wrap: wrap;
+        }
+      }
+
+      & span {
+        color: rgb(74 121 162);
+        display: block;
+        margin-bottom: 1rem;
+        font-size: 0.7rem;
+        font-weight: 300;
       }
     }
   }
@@ -274,7 +349,7 @@
     transform: rotateX(50deg) rotateY(6deg) rotate(138deg);
     border-radius: 7px;
     background: -o-linear-gradient(rgb(3, 38, 70), #07355f),
-      url("../../../src/assets/images/noise.svg");
+      url("images/noise.svg");
     background: -webkit-gradient(
         linear,
         left top,
@@ -282,9 +357,9 @@
         from(rgb(3, 38, 70)),
         to(#07355f)
       ),
-      url("../../../src/../../../src/assets/images/noise.svg");
+      url("images/noise.svg");
     background: linear-gradient(rgb(3, 38, 70), #07355f),
-      url("../../../src/assets/images/noise.svg");
+      url("images/noise.svg");
     -webkit-filter: contrast(200%) blur(20px);
     filter: contrast(200%) blur(20px);
     opacity: 0.3;
@@ -293,7 +368,7 @@
 
 .resume {
   color: #ed732e;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   text-decoration: underline;
 }
 
@@ -321,7 +396,7 @@
 
   @media screen and (min-width: 1024px) {
     & {
-      left: 6rem;
+      left: 4.5rem;
     }
   }
   & img {
@@ -362,7 +437,7 @@
       --top: -70px;
     }
     &:first-of-type span {
-      --bg-image: url("../../../src/assets/images/tech/html.svg");
+      --bg-image: url("images/tech/html.svg");
     }
     &:first-of-type span:after {
       --start: rgb(255 129 91);
@@ -372,7 +447,7 @@
       --left: -30px;
     }
     &:nth-of-type(2) span {
-      --bg-image: url("../../../src/assets/images/tech/css.svg");
+      --bg-image: url("images/tech/css.svg");
     }
     &:nth-of-type(2) span:after {
       --start: rgb(17 122 204);
@@ -381,7 +456,7 @@
       --top: -30px;
     }
     &:nth-of-type(3) span {
-      --bg-image: url("../../../src/assets/images/tech/js.svg");
+      --bg-image: url("images/tech/js.svg");
     }
     &:nth-of-type(3) span:after {
       --start: rgb(201, 151, 0);
@@ -391,7 +466,7 @@
       --left: 50px;
     }
     &:nth-of-type(4) span {
-      --bg-image: url("../../../src/assets/images/tech/ts.svg");
+      --bg-image: url("images/tech/ts.svg");
     }
     &:nth-of-type(4) span:after {
       --start: rgb(24, 82, 255);
@@ -401,17 +476,17 @@
       --left: 50px;
     }
     &:nth-of-type(5) span {
-      --bg-image: url("../../../src/assets/images/tech/react.svg");
+      --bg-image: url("images/tech/react.svg");
     }
     &:nth-of-type(5) span:after {
       --start: rgb(90 91 91);
     }
     &:nth-of-type(6) {
-      --bg-image: url("../../../src/assets/images/tech/react_native.svg");
+      --bg-image: url("images/tech/react_native.svg");
       display: none;
     }
     &:nth-of-type(6) span {
-      --bg-image: url("../../../src/assets/images/tech/react_native.svg");
+      --bg-image: url("images/tech/react_native.svg");
     }
     &:nth-of-type(6) span:after {
       --start: rgb(90 91 91);
@@ -421,7 +496,7 @@
       --left: -40px;
     }
     &:nth-of-type(7) span {
-      --bg-image: url("../../../src/assets/images/tech/expo.svg");
+      --bg-image: url("images/tech/expo.svg");
     }
     &:nth-of-type(7) span:after {
       --start: rgb(116 118 120);
@@ -431,7 +506,7 @@
       --left: 20px;
     }
     &:nth-of-type(8) span {
-      --bg-image: url("../../../src/assets/images/tech/next.svg");
+      --bg-image: url("images/tech/next.svg");
     }
     &:nth-of-type(8) span:after {
       --start: rgb(90 91 91);
@@ -441,7 +516,7 @@
       --left: 30px;
     }
     &:nth-of-type(9) span {
-      --bg-image: url("../../../src/assets/images/tech/tailwind.svg");
+      --bg-image: url("images/tech/tailwind.svg");
     }
     &:nth-of-type(9) span:after {
       --start: rgb(3 116 131);
@@ -451,7 +526,7 @@
       --left: 155px;
     }
     &:nth-of-type(10) span {
-      --bg-image: url("../../../src/assets/images/tech/aws.svg");
+      --bg-image: url("images/tech/aws.svg");
     }
     &:nth-of-type(10) span:after {
       --start: rgb(70 101 131);
@@ -465,11 +540,12 @@
     height: 100%;
     -webkit-transform: rotateX(44deg) rotateY(2deg) rotate(0deg);
     transform: rotateX(44deg) rotateY(2deg) rotate(0deg);
-    -webkit-box-shadow: 0 9px 20px -5px #001f34b8;
-    box-shadow: 0 9px 20px -5px #001f34b8;
+    -webkit-box-shadow: 0 9px 20px -5px rgba(0, 31, 52, 0.7);
+    box-shadow: 0 9px 20px -5px rgba(0, 31, 52, 0.7);
     background-size: contain;
     border-radius: 100%;
     background-image: var(--bg-image);
+    border-bottom: 1px solid #848484;
 
     &:after {
       content: "";
@@ -487,7 +563,7 @@
       background: -o-linear-gradient(
         var(--start),
         var(--black),
-        url("../../../src/assets/images/noise.svg")
+        url("images/noise.svg")
       );
       background: -webkit-gradient(
         linear,
@@ -495,12 +571,12 @@
         left bottom,
         from(var(--start)),
         to(var(--black)),
-        url("../../../src/assets/images/noise.svg")
+        url("images/noise.svg")
       );
       background: linear-gradient(
         var(--start),
         var(--black),
-        url("../../../src/assets/images/noise.svg")
+        url("images/noise.svg")
       );
 
       @media screen and (min-width: 1024px) {
@@ -538,7 +614,7 @@
       width: 3rem;
       height: 2rem;
       background: -o-linear-gradient(rgb(139 42 0), #7f2902),
-        url("../../../src/assets/images/noise.svg");
+        url("images/noise.svg");
       background: -webkit-gradient(
           linear,
           left top,
@@ -546,9 +622,9 @@
           from(rgb(139 42 0)),
           to(#7f2902)
         ),
-        url("../../../src/assets/images/noise.svg");
+        url("images/noise.svg");
       background: linear-gradient(rgb(139 42 0), #7f2902),
-        url("../../../src/assets/images/noise.svg");
+        url("images/noise.svg");
       -webkit-transform: rotate(-25deg) skew(40deg, 0deg);
       -ms-transform: rotate(-25deg) skew(40deg, 0deg);
       transform: rotate(-25deg) skew(40deg, 0deg);
@@ -655,20 +731,20 @@
       rgba(0, 0, 0, 0),
       rgba(84, 177, 24, 0.89)
     ),
-    url("../../../src/assets/images/noise.svg");
+    url("images/noise.svg");
   background: -o-radial-gradient(
       65% 35%,
       circle,
       rgba(0, 0, 0, 0),
       rgba(84, 177, 24, 0.89)
     ),
-    url("../../../src/assets/images/noise.svg");
+    url("images/noise.svg");
   background: radial-gradient(
       circle at 65% 35%,
       rgba(0, 0, 0, 0),
       rgba(84, 177, 24, 0.89)
     ),
-    url("../../../src/assets/images/noise.svg");
+    url("images/noise.svg");
 }
 .tree span:nth-child(3) {
   background-color: #217100;
@@ -682,9 +758,9 @@
 }
 .tree span:nth-child(3):after {
   background: -o-radial-gradient(65% 35%, circle, rgba(0, 0, 0, 0), #347618),
-    url("../../../src/assets/images/noise.svg");
+    url("images/noise.svg");
   background: radial-gradient(circle at 65% 35%, rgba(0, 0, 0, 0), #347618),
-    url("../../../src/assets/images/noise.svg");
+    url("images/noise.svg");
 }
 .tree span:nth-child(4) {
   background-color: #095100;
@@ -695,9 +771,9 @@
 }
 .tree span:nth-child(4):after {
   background: -o-radial-gradient(65% 35%, circle, rgba(0, 0, 0, 0), #095100),
-    url("../../../src/assets/images/noise.svg");
+    url("images/noise.svg");
   background: radial-gradient(circle at 65% 35%, rgba(0, 0, 0, 0), #095100),
-    url("../../../src/assets/images/noise.svg");
+    url("images/noise.svg");
 }
 .tree span:nth-child(5) {
   background-color: #41240b;
@@ -831,7 +907,7 @@
   width: 60%;
   height: 50%;
   background: -o-linear-gradient(rgb(3, 38, 70), #07355f),
-    url("../../../src/assets/images/noise.svg");
+    url("images/noise.svg");
   background: -webkit-gradient(
       linear,
       left top,
@@ -839,9 +915,8 @@
       from(rgb(3, 38, 70)),
       to(#07355f)
     ),
-    url("../../../src/assets/images/noise.svg");
-  background: linear-gradient(rgb(3, 38, 70), #07355f),
-    url("../../../src/assets/images/noise.svg");
+    url("images/noise.svg");
+  background: linear-gradient(rgb(3, 38, 70), #07355f), url("images/noise.svg");
   -webkit-transform: skew(-61deg, 25deg);
   -ms-transform: skew(-61deg, 25deg);
   transform: skew(-61deg, 25deg);
@@ -869,7 +944,7 @@
   width: 63px;
   height: 55px;
   background: -o-linear-gradient(rgb(3, 38, 70), #07355f),
-    url("../../../src/assets/images/noise.svg");
+    url("images/noise.svg");
   background: -webkit-gradient(
       linear,
       left top,
@@ -877,9 +952,8 @@
       from(rgb(3, 38, 70)),
       to(#07355f)
     ),
-    url("../../../src/assets/images/noise.svg");
-  background: linear-gradient(rgb(3, 38, 70), #07355f),
-    url("../../../src/assets/images/noise.svg");
+    url("images/noise.svg");
+  background: linear-gradient(rgb(3, 38, 70), #07355f), url("images/noise.svg");
   -webkit-transform: rotate(45deg) skew(-1deg, -18deg);
   -ms-transform: rotate(45deg) skew(-1deg, -18deg);
   transform: rotate(45deg) skew(-1deg, -18deg);

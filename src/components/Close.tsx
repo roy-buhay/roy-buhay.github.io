@@ -17,9 +17,9 @@ export const Close: FC<Props> = ({ close }) => {
         <path
           d="M7 7L17 17M7 17L17 7"
           stroke="var(--close-text-color)"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     </button>

@@ -68,7 +68,7 @@
       width: 100%;
       height: 100%;
       background: radial-gradient(circle at 55% 54%, rgba(0, 0, 0, 0), #000),
-        url("../../assets/images/noise.svg");
+        url("images/noise.svg");
       -webkit-filter: contrast(170%);
       filter: contrast(170%);
       mix-blend-mode: var(--screen);
@@ -157,13 +157,13 @@
           var(--header-noise-bg),
           var(-header-noise)
         ),
-        url("../../assets/images/noise.svg");
+        url("images/noise.svg");
       background: radial-gradient(
           circle at -44% -20%,
           var(--header-noise-bg),
           var(-header-noise)
         ),
-        url("../../assets/images/noise.svg");
+        url("images/noise.svg");
     }
 
     & .button {
@@ -267,7 +267,7 @@
 
     & .noise {
       background: -o-linear-gradient(rgb(208 61 5 / 0%), var(--left-noise-bg)),
-        url("../../assets/images/noise.svg");
+        url("images/noise.svg");
       background: -webkit-gradient(
           linear,
           left top,
@@ -275,9 +275,9 @@
           from(rgba(255, 0, 0, 0)),
           to(#b44a07)
         ),
-        url("../../assets/images/noise.svg");
+        url("images/noise.svg");
       background: linear-gradient(rgb(208 61 5 / 0%), var(--left-noise-bg)),
-        url("../../assets/images/noise.svg");
+        url("images/noise.svg");
     }
   }
 
@@ -327,7 +327,7 @@
       background: -o-linear-gradient(
         rgba(217, 217, 217, 0),
         #9e9e9e,
-        url("../../assets/images/noise.svg")
+        url("images/noise.svg")
       );
       background: -webkit-gradient(
         linear,
@@ -335,10 +335,10 @@
         left bottom,
         from(rgba(217, 217, 217, 0)),
         to(#9e9e9e),
-        url("../../assets/images/noise.svg")
+        url("images/noise.svg")
       );
       background: linear-gradient(rgba(217, 217, 217, 0), #9e9e9e),
-        url("../../assets/images/noise.svg");
+        url("images/noise.svg");
     }
 
     & > div {

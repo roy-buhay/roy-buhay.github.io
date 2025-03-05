@@ -17,8 +17,8 @@ export enum PAGE_TYPE {
   PROJECTS = "projects",
 }
 
-export const SCREEN_PATH = "../../src/assets/images/";
-export const SVG_PATH = "../../src/assets/svg/";
+export const SCREEN_PATH = "/images/";
+export const SVG_PATH = "/svg/";
 
 export default function App() {
   const { isOpen, type } = useModal();
