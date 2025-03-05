@@ -103,7 +103,7 @@
       width: 100%;
       height: 100%;
       background: -o-linear-gradient(rgba(255, 0, 0, 0), rgb(201, 52, 3)),
-        url("images/noise.svg");
+        url("/images/noise.svg");
       background: -webkit-gradient(
           linear,
           left top,
@@ -111,9 +111,9 @@
           from(rgba(255, 0, 0, 0)),
           to(rgb(201, 52, 3))
         ),
-        url("images/noise.svg");
+        url("/images/noise.svg");
       background: linear-gradient(rgba(255, 0, 0, 0), rgb(201, 52, 3)),
-        url("images/noise.svg");
+        url("/images/noise.svg");
       -webkit-filter: contrast(120%) brightness(100%);
       filter: contrast(120%) brightness(100%);
     }
@@ -349,7 +349,7 @@
     transform: rotateX(50deg) rotateY(6deg) rotate(138deg);
     border-radius: 7px;
     background: -o-linear-gradient(rgb(3, 38, 70), #07355f),
-      url("images/noise.svg");
+      url("/images/noise.svg");
     background: -webkit-gradient(
         linear,
         left top,
@@ -357,9 +357,9 @@
         from(rgb(3, 38, 70)),
         to(#07355f)
       ),
-      url("images/noise.svg");
+      url("/images/noise.svg");
     background: linear-gradient(rgb(3, 38, 70), #07355f),
-      url("images/noise.svg");
+      url("/images/noise.svg");
     -webkit-filter: contrast(200%) blur(20px);
     filter: contrast(200%) blur(20px);
     opacity: 0.3;
@@ -437,7 +437,7 @@
       --top: -70px;
     }
     &:first-of-type span {
-      --bg-image: url("images/tech/html.svg");
+      --bg-image: url("/images/tech/html.svg");
     }
     &:first-of-type span:after {
       --start: rgb(255 129 91);
@@ -447,7 +447,7 @@
       --left: -30px;
     }
     &:nth-of-type(2) span {
-      --bg-image: url("images/tech/css.svg");
+      --bg-image: url("/images/tech/css.svg");
     }
     &:nth-of-type(2) span:after {
       --start: rgb(17 122 204);
@@ -456,7 +456,7 @@
       --top: -30px;
     }
     &:nth-of-type(3) span {
-      --bg-image: url("images/tech/js.svg");
+      --bg-image: url("/images/tech/js.svg");
     }
     &:nth-of-type(3) span:after {
       --start: rgb(201, 151, 0);
@@ -466,7 +466,7 @@
       --left: 50px;
     }
     &:nth-of-type(4) span {
-      --bg-image: url("images/tech/ts.svg");
+      --bg-image: url("/images/tech/ts.svg");
     }
     &:nth-of-type(4) span:after {
       --start: rgb(24, 82, 255);
@@ -476,17 +476,17 @@
       --left: 50px;
     }
     &:nth-of-type(5) span {
-      --bg-image: url("images/tech/react.svg");
+      --bg-image: url("/images/tech/react.svg");
     }
     &:nth-of-type(5) span:after {
       --start: rgb(90 91 91);
     }
     &:nth-of-type(6) {
-      --bg-image: url("images/tech/react_native.svg");
+      --bg-image: url("/images/tech/react_native.svg");
       display: none;
     }
     &:nth-of-type(6) span {
-      --bg-image: url("images/tech/react_native.svg");
+      --bg-image: url("/images/tech/react_native.svg");
     }
     &:nth-of-type(6) span:after {
       --start: rgb(90 91 91);
@@ -496,7 +496,7 @@
       --left: -40px;
     }
     &:nth-of-type(7) span {
-      --bg-image: url("images/tech/expo.svg");
+      --bg-image: url("/images/tech/expo.svg");
     }
     &:nth-of-type(7) span:after {
       --start: rgb(116 118 120);
@@ -506,7 +506,7 @@
       --left: 20px;
     }
     &:nth-of-type(8) span {
-      --bg-image: url("images/tech/next.svg");
+      --bg-image: url("/images/tech/next.svg");
     }
     &:nth-of-type(8) span:after {
       --start: rgb(90 91 91);
@@ -516,7 +516,7 @@
       --left: 30px;
     }
     &:nth-of-type(9) span {
-      --bg-image: url("images/tech/tailwind.svg");
+      --bg-image: url("/images/tech/tailwind.svg");
     }
     &:nth-of-type(9) span:after {
       --start: rgb(3 116 131);
@@ -526,7 +526,7 @@
       --left: 155px;
     }
     &:nth-of-type(10) span {
-      --bg-image: url("images/tech/aws.svg");
+      --bg-image: url("/images/tech/aws.svg");
     }
     &:nth-of-type(10) span:after {
       --start: rgb(70 101 131);
@@ -563,7 +563,7 @@
       background: -o-linear-gradient(
         var(--start),
         var(--black),
-        url("images/noise.svg")
+        url("/images/noise.svg")
       );
       background: -webkit-gradient(
         linear,
@@ -571,12 +571,12 @@
         left bottom,
         from(var(--start)),
         to(var(--black)),
-        url("images/noise.svg")
+        url("/images/noise.svg")
       );
       background: linear-gradient(
         var(--start),
         var(--black),
-        url("images/noise.svg")
+        url("/images/noise.svg")
       );
 
       @media screen and (min-width: 1024px) {
@@ -614,7 +614,7 @@
       width: 3rem;
       height: 2rem;
       background: -o-linear-gradient(rgb(139 42 0), #7f2902),
-        url("images/noise.svg");
+        url("/images/noise.svg");
       background: -webkit-gradient(
           linear,
           left top,
@@ -622,9 +622,9 @@
           from(rgb(139 42 0)),
           to(#7f2902)
         ),
-        url("images/noise.svg");
+        url("/images/noise.svg");
       background: linear-gradient(rgb(139 42 0), #7f2902),
-        url("images/noise.svg");
+        url("/images/noise.svg");
       -webkit-transform: rotate(-25deg) skew(40deg, 0deg);
       -ms-transform: rotate(-25deg) skew(40deg, 0deg);
       transform: rotate(-25deg) skew(40deg, 0deg);
@@ -731,20 +731,20 @@
       rgba(0, 0, 0, 0),
       rgba(84, 177, 24, 0.89)
     ),
-    url("images/noise.svg");
+    url("/images/noise.svg");
   background: -o-radial-gradient(
       65% 35%,
       circle,
       rgba(0, 0, 0, 0),
       rgba(84, 177, 24, 0.89)
     ),
-    url("images/noise.svg");
+    url("/images/noise.svg");
   background: radial-gradient(
       circle at 65% 35%,
       rgba(0, 0, 0, 0),
       rgba(84, 177, 24, 0.89)
     ),
-    url("images/noise.svg");
+    url("/images/noise.svg");
 }
 .tree span:nth-child(3) {
   background-color: #217100;
@@ -758,9 +758,9 @@
 }
 .tree span:nth-child(3):after {
   background: -o-radial-gradient(65% 35%, circle, rgba(0, 0, 0, 0), #347618),
-    url("images/noise.svg");
+    url("/images/noise.svg");
   background: radial-gradient(circle at 65% 35%, rgba(0, 0, 0, 0), #347618),
-    url("images/noise.svg");
+    url("/images/noise.svg");
 }
 .tree span:nth-child(4) {
   background-color: #095100;
@@ -771,9 +771,9 @@
 }
 .tree span:nth-child(4):after {
   background: -o-radial-gradient(65% 35%, circle, rgba(0, 0, 0, 0), #095100),
-    url("images/noise.svg");
+    url("/images/noise.svg");
   background: radial-gradient(circle at 65% 35%, rgba(0, 0, 0, 0), #095100),
-    url("images/noise.svg");
+    url("/images/noise.svg");
 }
 .tree span:nth-child(5) {
   background-color: #41240b;
@@ -907,7 +907,7 @@
   width: 60%;
   height: 50%;
   background: -o-linear-gradient(rgb(3, 38, 70), #07355f),
-    url("images/noise.svg");
+    url("/images/noise.svg");
   background: -webkit-gradient(
       linear,
       left top,
@@ -915,8 +915,8 @@
       from(rgb(3, 38, 70)),
       to(#07355f)
     ),
-    url("images/noise.svg");
-  background: linear-gradient(rgb(3, 38, 70), #07355f), url("images/noise.svg");
+    url("/images/noise.svg");
+  background: linear-gradient(rgb(3, 38, 70), #07355f), url("/images/noise.svg");
   -webkit-transform: skew(-61deg, 25deg);
   -ms-transform: skew(-61deg, 25deg);
   transform: skew(-61deg, 25deg);
@@ -944,7 +944,7 @@
   width: 63px;
   height: 55px;
   background: -o-linear-gradient(rgb(3, 38, 70), #07355f),
-    url("images/noise.svg");
+    url("/images/noise.svg");
   background: -webkit-gradient(
       linear,
       left top,
@@ -952,8 +952,8 @@
       from(rgb(3, 38, 70)),
       to(#07355f)
     ),
-    url("images/noise.svg");
-  background: linear-gradient(rgb(3, 38, 70), #07355f), url("images/noise.svg");
+    url("/images/noise.svg");
+  background: linear-gradient(rgb(3, 38, 70), #07355f), url("/images/noise.svg");
   -webkit-transform: rotate(45deg) skew(-1deg, -18deg);
   -ms-transform: rotate(45deg) skew(-1deg, -18deg);
   transform: rotate(45deg) skew(-1deg, -18deg);

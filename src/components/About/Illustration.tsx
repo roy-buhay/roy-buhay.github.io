@@ -19,8 +19,8 @@ export const Illustration: FC = () => {
           <img src={truck} alt="Truck" draggable="false" />
         </div>
         <div className={styles.tech}>
-          {new Array(9).fill(null).map((_) => (
-            <div>
+          {new Array(9).fill(null).map((_, index) => (
+            <div key={index}>
               <span role="none" />
             </div>
           ))}
@@ -38,8 +38,8 @@ export const Illustration: FC = () => {
         </div>
         <div className={styles.about__panel}>
           <div className={styles.noise} role="none" />
-          {new Array(16).fill(null).map((_) => (
-            <div className={styles.tree}>
+          {new Array(16).fill(null).map((_, index) => (
+            <div key={index} className={styles.tree}>
               <span role="none" />
               <span role="none" />
               <span role="none" />
