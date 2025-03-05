@@ -68,7 +68,8 @@ export const projects = [
       "Screens and components styling",
       "API integration",
       "Social Media SDK integration",
-      "Location detection",
+      "Geolocation",
+      "Push Notification",
     ],
     technologies: [
       "reactnative",
@@ -81,34 +82,50 @@ export const projects = [
     ],
     screens: [
       {
-        path: "avazoo-shares2.jpg",
+        path: "avazoo-success.jpg",
       },
       {
-        path: "avazoo-popup2.jpg",
+        path: "avazoo-notifications.jpg",
       },
       {
-        path: "avazoo-home2.jpg",
+        path: "avazoo-home3.jpg",
       },
     ],
     screenshots: [
       {
-        path: "avazoo-home2.jpg",
+        path: "avazoo-login3.jpg",
         class: "mobile",
       },
       {
-        path: "avazoo-popup2.jpg",
+        path: "avazoo-home3.jpg",
         class: "mobile",
       },
       {
-        path: "avazoo-shares2.jpg",
+        path: "avazoo-popup5.jpg",
         class: "mobile",
       },
       {
-        path: "avazoo-profile2.jpg",
+        path: "avazoo-supporters.jpg",
         class: "mobile",
       },
       {
-        path: "avazoo-reward2.jpg",
+        path: "avazoo-success.jpg",
+        class: "mobile",
+      },
+      {
+        path: "avazoo-notifications.jpg",
+        class: "mobile",
+      },
+      {
+        path: "avazoo-referrals.jpg",
+        class: "mobile",
+      },
+      {
+        path: "avazoo-wheel.jpg",
+        class: "mobile",
+      },
+      {
+        path: "avazoo-profile3.jpg",
         class: "mobile",
       },
     ],
