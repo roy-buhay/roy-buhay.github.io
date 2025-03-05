@@ -30,10 +30,27 @@ export const Details: FC<Props> = ({ ref, project, back }) => {
             width: `${data?.pageWidth}rem`,
           }}
         />
-        <p>{data?.desc}</p>
-        <a href={data?.url}>{data?.urlText}</a>
 
-        {/* {data && <Technologies data={data} />} */}
+        {data && data.url ? (
+          <a href={data?.url} target="_blank">
+            {data?.urlText}
+          </a>
+        ) : (
+          <br />
+        )}
+
+        {data && <Technologies data={data} />}
+        {data && (
+          <>
+            <p>{data?.task}</p>
+            <ul className={styles.projects_details_features}>
+              {data.roles.map((role) => (
+                <li>{role}</li>
+              ))}
+            </ul>
+          </>
+        )}
+        <br />
       </div>
 
       {data && <Screen data={data} screens={data.screenshots} />}

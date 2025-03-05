@@ -62,7 +62,7 @@
 
       button {
         font: 400 0.7rem / 1.6 "Martian Mono";
-        color: #476e95;
+        color: rgb(71, 110, 149);
         font-size: 0.75rem;
         text-decoration: underline;
         cursor: pointer;
@@ -100,7 +100,7 @@
 
       p {
         font: 300 0.75rem/1.6 "Martian Mono";
-        color: var(--description-color);
+        color: #94abc2;
         margin: 0 auto;
         text-align: center;
 
@@ -108,19 +108,33 @@
           & {
             font-size: 0.8rem;
             line-height: 1.8;
-            margin-top: 1.2rem;
+            margin-top: 2rem;
             margin-bottom: 1rem;
-            width: 60%;
+            width: 75%;
           }
         }
       }
 
       a {
         font: 400 0.75rem / 1.6 "Martian Mono";
-        color: #3c6ea2;
+        color: rgb(85 112 141);
         display: inline-block;
-        margin: 1rem 0 2rem 0;
+        margin: 1rem 0 3rem 0;
         text-decoration: underline;
+      }
+    }
+
+    &_features {
+      & li {
+        font: 300 0.8rem / 1.6 "Martian Mono";
+        color: #94abc2;
+        margin-bottom: 0.2rem;
+
+        &:before {
+          content: "•";
+          font-size: 0.5rem;
+          margin-right: 0.5rem;
+        }
       }
     }
   }
