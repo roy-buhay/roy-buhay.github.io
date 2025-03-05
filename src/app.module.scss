@@ -122,9 +122,9 @@
       height: 100%;
       opacity: 0.5;
       background: -o-radial-gradient(59% -25%, circle, rgba(0, 0, 0, 0), #000),
-        url("images/noise.svg");
+        url("/images/noise.svg");
       background: radial-gradient(circle at 59% -25%, rgba(0, 0, 0, 0), #000),
-        url("images/noise.svg");
+        url("/images/noise.svg");
       -webkit-filter: contrast(200%);
       filter: contrast(200%);
       mix-blend-mode: lighten;
@@ -132,9 +132,9 @@
       @media screen and (min-width: 1024px) {
         & {
           background: -o-radial-gradient(65% 0%, circle, rgba(0, 0, 0, 0), #000),
-            url("images/noise.svg");
+            url("/images/noise.svg");
           background: radial-gradient(circle at 65% 0%, rgba(0, 0, 0, 0), #000),
-            url("images/noise.svg");
+            url("/images/noise.svg");
         }
       }
     }
