@@ -23,7 +23,7 @@
     grid-row: 1 / -1;
     overflow: hidden;
     position: relative;
-    padding: 6rem 1.5rem 0 1.5rem;
+    padding: 3rem 1.5rem 0 1.5rem;
 
     @media screen and (min-width: 1024px) {
       & {
@@ -32,7 +32,7 @@
     }
 
     & h1 {
-      font: 700 2.4rem/1.1 "Chivo Mono", serif;
+      font: 700 2.6rem/1.1 "Chivo Mono", serif;
       color: var(--white);
       width: 100%;
 
