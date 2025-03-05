@@ -76,6 +76,22 @@ html {
   flex-direction: column;
 }
 
+#root:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 41% 44%, rgba(0, 0, 0, 0), #000),
+    url(/images/noise.svg);
+  -webkit-filter: contrast(300%);
+  filter: contrast(300%);
+  mix-blend-mode: var(--screen);
+  opacity: 0.3;
+  z-index: -1;
+}
+
 body {
   height: 100%;
   margin: 0;
