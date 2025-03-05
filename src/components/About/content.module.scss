@@ -133,9 +133,11 @@
     -webkit-transform: scale(0.75);
     -ms-transform: scale(0.75);
     transform: scale(0.75);
+    order: 1;
 
     @media screen and (min-width: 1024px) {
       & {
+        order: 2;
         -webkit-transform: scale(0.9);
         -ms-transform: scale(0.9);
         transform: scale(0.9);
@@ -181,9 +183,11 @@
     flex: 1;
     margin-bottom: 0.5rem;
     padding-right: 2rem;
+    order: 2;
 
     @media screen and (min-width: 1024px) {
       & {
+        order: 1;
         margin-top: 4rem;
         overflow-y: auto;
         overflow-x: hidden;
@@ -247,11 +251,17 @@
 
     & .date {
       display: block;
-      width: 24%;
+      width: 26%;
       text-transform: uppercase;
       font-size: 0.75rem;
       color: #4f6d88;
       margin-top: 0.2rem;
+
+      @media screen and (min-width: 1024px) {
+        & {
+          width: 24%;
+        }
+      }
     }
 
     & article {
@@ -382,7 +392,7 @@
     overflow-x: hidden;
   }
   .about__illustration {
-    margin-top: 14rem;
+    margin-top: 12rem;
   }
 }
 
@@ -965,7 +975,7 @@
 }
 @media screen and (max-width: 1024px) {
   .about__texts {
-    padding: 2rem;
+    padding: 2rem 1rem;
   }
 }
 
