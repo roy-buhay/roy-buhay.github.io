@@ -56,7 +56,7 @@ export const projects = [
   {
     title: "avazoo",
     desc: "Avazoo allows users to use local and national chains to receive additional entries by posting in social media platforms information about the causes important to organizations and the raffle.",
-    task: "Revamped the UI and implementation using React Native with Expo from scratch to handle social media sharing, geolocation, data fetching and more.",
+    task: "I revamped the UI and implementation using React Native with Expo from scratch to handle social media sharing, geolocation, data fetching, and more.",
     url: "https://avazoo.com/",
     urlText: "https://avazoo.com/",
     width: 5,
@@ -101,11 +101,11 @@ export const projects = [
         class: "mobile",
       },
       {
-        path: "avazoo-popup5.jpg",
+        path: "avazoo-supporters.jpg",
         class: "mobile",
       },
       {
-        path: "avazoo-supporters.jpg",
+        path: "avazoo-popup5.jpg",
         class: "mobile",
       },
       {
@@ -121,6 +121,10 @@ export const projects = [
         class: "mobile",
       },
       {
+        path: "avazoo-referrals-popup.jpg",
+        class: "mobile",
+      },
+      {
         path: "avazoo-wheel.jpg",
         class: "mobile",
       },
@@ -132,7 +136,7 @@ export const projects = [
   },
   {
     title: "matchit",
-    desc: "Zeiton is a reward scoring unit that allows people who are enthusiastic to serve the society to receive substantial rewards, thereby promoting everyone to participate in social construction activities.",
+    desc: "Match-It is a number-matching game that reveals a new target number every four hours. Players look for matches on their heart-shaped board and earn points for successful matches, with extra points awarded when matches form patterns.",
     task: "Revamped the UI and refactored the code from class to functional components along with reworked integration flow as this game is embedded on different company owned platforms.",
     url: "",
     urlText: "",
@@ -190,8 +194,8 @@ export const projects = [
   },
   {
     title: "crateclub",
-    desc: "Crate Club offers military and survival enthusiasts a subscription service featuring hand-picked, field-tested tactical gear from renowned brands, providing high-value monthly boxes at tiered pricing levels for individuals ranging from novices to experienced tacticians.",
-    task: "Worked on the dashboard and mobile UI and front-end implementation using Laravel's blade templating engine. Also on different library integration for both marketing and dashboard.",
+    desc: "Crate Club offers military and survival enthusiasts a subscription service featuring hand-picked, field-tested tactical gear from renowned brands.",
+    task: "I worked on the dashboard and mobile UI and front-end implementation using Laravel's blade templating engine. I also worked on different library integrations for both marketing and dashboard.",
     url: "https://crateclub.com/",
     urlText: "https://crateclub.com/",
     width: 10,
@@ -202,7 +206,7 @@ export const projects = [
       "Library integrations",
       "Screens and components styling",
       "Data fetching",
-      "E-commerce shop",
+      "In-house e-commerce shop",
     ],
     technologies: ["laravel", "sass", "javascript", "mysql", "figma", "stripe"],
     screens: [
@@ -246,7 +250,7 @@ export const projects = [
   {
     title: "rrs",
     desc: "Rewards Ripple Solutions is a loyalty programs rewards points system with a twist.",
-    task: "Implemented a rewards points and referral system web app from design to functionality. Along with 3rd party integrations for different sports related APIs.",
+    task: "I implemented a rewards points and referral system web app from design to functionality, along with 3rd party integrations for different sports-related APIs.",
     url: "https://rewardripplesolutions.com/",
     urlText: "https://rewardripplesolutions.com/",
     width: 7,
@@ -313,8 +317,8 @@ export const projects = [
   },
   {
     title: "crypto",
-    desc: "Zeiton is a reward scoring unit that allows people who are enthusiastic to serve the society to receive substantial rewards, thereby promoting everyone to participate in social construction activities.",
-    task: "Played around with different crypto related technologies and create this dApp that handles NFT creation and purchase using contracts for Ethereum.",
+    desc: "NFT marketplace dApp where users mint ERC721 implemented NFTs.",
+    task: "I have played around with different crypto-related technologies and created this dApp that handles NFT creation and purchase using smart contracts for Ethereum.",
     url: "https://github.com/roy-buhay/NFT-Marketplace",
     urlText: "NFT-Marketplace",
     width: 13,
