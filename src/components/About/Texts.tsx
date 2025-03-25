@@ -22,7 +22,7 @@ export const Texts: FC = () => {
       <small className={styles.date}> </small>
       <p>
         <a
-          href="roy-buhay-resume.pdf"
+          href="Roy Jose Buhay - Software Developer Resume.pdf"
           className={styles.resume}
           target="_blank"
           title="Roy Jose Buhay Resume Link"
@@ -36,7 +36,7 @@ export const Texts: FC = () => {
       <br />
 
       <article>
-        <small className={styles.date}> Present</small>
+        <small className={styles.date}> Present </small>
         <div>
           <p>
             <a href="https://avazoo.com/" target="_blank">
@@ -62,7 +62,7 @@ export const Texts: FC = () => {
         </div>
       </article>
       <article>
-        <small className={styles.date}> 2018 - 2021</small>
+        <small className={styles.date}> 2021 - 2022</small>
         <div>
           <p>
             <a
@@ -90,7 +90,7 @@ export const Texts: FC = () => {
         </div>
       </article>
       <article>
-        <small className={styles.date}> 2018 - 2021</small>
+        <small className={styles.date}> 2019 - 2021</small>
         <div>
           <p>
             <a href="https://hk.entinux.com/" target="_blank">
@@ -118,7 +118,7 @@ export const Texts: FC = () => {
         </div>
       </article>
       <article>
-        <small className={styles.date}> 2021 - 2022 </small>
+        <small className={styles.date}> 2018 - 2019 </small>
         <div>
           <p>
             <a href="https://crateclub.com/" target="_blank">

@@ -51,8 +51,8 @@
     grid-template-rows: repeat(7, 1fr);
     -webkit-transform: rotateX(51deg) rotateY(2deg) rotate(320deg);
     transform: rotateX(51deg) rotateY(2deg) rotate(320deg);
-    -webkit-box-shadow: -20px 7px 70px 10px rgb(1 18 33 / 55%);
-    box-shadow: -20px 7px 70px 10px rgb(1 18 33 / 55%);
+    -webkit-box-shadow: -20px 7px 70px 10px rgb(1 18 33 / 90%);
+    box-shadow: -20px 7px 70px 10px rgb(1 18 33 / 90%);
 
     @media screen and (min-width: 1024px) {
       & {
@@ -138,9 +138,14 @@
     @media screen and (min-width: 1024px) {
       & {
         order: 2;
-        -webkit-transform: scale(0.9);
-        -ms-transform: scale(0.9);
-        transform: scale(0.9);
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+        position: relative;
+        right: -2rem;
+        top: 3rem;
+        overflow: hidden;
+        padding-bottom: 3rem;
       }
     }
   }
