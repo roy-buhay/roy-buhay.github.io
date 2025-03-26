@@ -55,7 +55,7 @@ export const Card: FC = () => {
       onClick={() => openModal(PAGE_TYPE.ABOUT)}
     >
       <div className={appStyle.card__content}>
-        <h2>About Me</h2>
+        <h2>About</h2>
         <p>A bit of background and what I'm studying</p>
         {/* <div className={styles.illustration}>
           <div className={styles.man}>
