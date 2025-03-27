@@ -17,7 +17,7 @@ export const Card: FC = () => {
       onClick={() => openModal(PAGE_TYPE.PROJECTS)}
     >
       <div className={appStyle.card__content}>
-        <h2>Featured Works</h2>
+        <h2>Featured Projects</h2>
         <p>Here are a few projects I've worked on</p>
         <span className={styles.phone}>
           <span className={styles.phone_camera} />

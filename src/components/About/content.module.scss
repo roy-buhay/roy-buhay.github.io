@@ -134,11 +134,11 @@
     -webkit-transform: scale(0.75);
     -ms-transform: scale(0.75);
     transform: scale(0.75);
-    order: 1;
+    // order: 1;
 
     @media screen and (min-width: 1024px) {
       & {
-        order: 2;
+        // order: 2;
         -webkit-transform: scale(1);
         -ms-transform: scale(1);
         transform: scale(1);
@@ -189,11 +189,11 @@
     flex: 1;
     margin-bottom: 0.5rem;
     padding-right: 2rem;
-    order: 2;
+    // order: 2;
 
     @media screen and (min-width: 1024px) {
       & {
-        order: 1;
+        // order: 1;
         margin-top: 4rem;
         overflow-y: auto;
         overflow-x: hidden;
@@ -545,6 +545,26 @@
       --bg-image: url("/images/tech/aws.svg");
     }
     &:nth-of-type(10) span:after {
+      --start: rgb(70 101 131);
+    }
+    &:nth-of-type(11) {
+      --top: 40px;
+      --left: 5px;
+    }
+    &:nth-of-type(11) span {
+      --bg-image: url("/images/tech/graphql.svg");
+    }
+    &:nth-of-type(11) span:after {
+      --start: rgb(70 101 131);
+    }
+    &:nth-of-type(12) {
+      --top: 80px;
+      --left: -45px;
+    }
+    &:nth-of-type(12) span {
+      --bg-image: url("/images/tech/express.svg");
+    }
+    &:nth-of-type(12) span:after {
       --start: rgb(70 101 131);
     }
   }

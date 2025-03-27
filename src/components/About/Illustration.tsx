@@ -19,7 +19,7 @@ export const Illustration: FC = () => {
           <img src={truck} alt="Truck" draggable="false" />
         </div>
         <div className={styles.tech}>
-          {new Array(9).fill(null).map((_, index) => (
+          {new Array(12).fill(null).map((_, index) => (
             <div key={index}>
               <span role="none" />
             </div>
