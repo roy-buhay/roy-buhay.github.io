@@ -22,7 +22,7 @@ export const Texts: FC = () => {
       <small className={styles.date}> </small>
       <p>
         <a
-          href="Roy Jose Buhay - Software Developer Resume.pdf"
+          href="roy-buhay-resume.pdf"
           className={styles.resume}
           target="_blank"
           title="Roy Jose Buhay Resume Link"
