@@ -1,179 +1,182 @@
 ---
 import { Image } from "astro:assets";
-import avatar1 from "@assets/images/avatar-1.svg";
-import avatar2 from "@assets/images/avatar-2.svg";
-import avatar3 from "@assets/images/avatar-3.svg";
+import { projects } from "@data/projects";
+
+type Projects = (typeof projects)[number]["title"];
+type Project = (typeof projects)[number];
 ---
 
-<div data-projects-card class="animate card">
-    <div class="card__content">
-        <span>
-            <h3 class="animate">Featured Works</h3>
-            <p class="animate">Here are a few projects I've worked on</p>
-        </span>
-        <div>
-            <div class="animate">
-                <span class="phone">
-                    <span class="phone-camera"></span>
-                    <span class="phone-speaker"></span>
-                    <span class="phone-img">
-                        <span class="phone-search"></span>
-                        <span class="phone-message">
-                            <Image src={avatar1} alt="Avatar 1" />
-                            <span>
-                                <p>新木優子</p>
-                                <small> 美味しい染みる…</small>
-                            </span>
-                        </span>
-                        <span class="phone-message">
-                            <Image src={avatar2} alt="Avatar 2" />
-                            <span>
-                                <p>Yui Aragaki</p>
-                                <small> Are you free tonight?</small>
-                            </span>
-                        </span>
-                        <span class="phone-message">
-                            <Image src={avatar3} alt="Avatar 3" />
-                            <span>
-                                <p>石田百合子</p>
-                                <small> 🤔やろうと意識してやってるこ...</small>
-                            </span>
-                        </span>
+<section>
+    <h2>Selected Works</h2>
+    <div class="projects">
+        {
+            projects.map((project: Project) => (
+                <a href={`projects/${project.title}`} class="projects__link">
+                    <span class="projects__info">
+                        <Image
+                            src={`/images/${project.title}/${project.icon}`}
+                            alt={project.title}
+                            width={24}
+                            height={24}
+                        />
+                        <p class="projects__desc">{project.short_desc}</p>
+                        <ul class="projects__tech">
+                            {project.technologies.map((tech) => (
+                                <li
+                                    class="projects__tech_list"
+                                    data-tooltip={tech}
+                                >
+                                    <Image
+                                        src={`/svg/${tech}.svg`}
+                                        alt={tech}
+                                        width={24}
+                                        height={24}
+                                    />
+                                </li>
+                            ))}
+                        </ul>
                     </span>
-                </span>
-            </div>
-        </div>
-        <small class="noise"></small>
+                    <span class="projects__screens">
+                        {project.screens.map((screen) => (
+                            <Image
+                                class="projects__screens_img"
+                                src={`/images/${project.title}/${screen.path}`}
+                                alt={project.title}
+                                width={32}
+                                height={32}
+                            />
+                        ))}
+                    </span>
+                </a>
+            ))
+        }
     </div>
-</div>
+</section>
 
-<style>
-    .card__content {
-        background-color: var(--tertiary-color);
-    }
-    .card__content:active {
-        background-color: var(--tertiary-hover-color);
-    }
-    .phone {
-        background-color: #0b3963;
-        display: block;
-        width: 200px;
-        height: 100%;
-        margin: 0 auto;
-        margin-top: 2rem;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-        position: relative;
-        padding: 0 0.8rem;
-        text-align: center;
-        overflow: hidden;
-    }
-    .phone > span {
-        display: block;
-    }
-    .phone:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: -o-linear-gradient(250deg, rgba(0, 0, 0, 0), #000),
-            url("./src/assets/images/noise.svg");
-        background: linear-gradient(200deg, rgba(0, 0, 0, 0), #000),
-            url("./src/assets/images/noise.svg");
-        -webkit-filter: contrast(200%);
-        filter: contrast(200%);
-        mix-blend-mode: screen;
-        opacity: 0.3;
-    }
-    .phone-speaker {
-        background-color: #264870;
-        display: inline-block;
-        border-radius: 50px;
-        width: 50px;
-        height: 8px;
-        margin: 8% auto 0;
-    }
-    .phone-camera {
-        background-color: #264870;
-        border-radius: 50px;
-        display: inline-block;
-        width: 10px;
-        height: 10px;
-        position: absolute;
-        top: 5%;
-        right: 32%;
-    }
-    .phone-img {
-        background: -o-linear-gradient(45deg, #f99c7e, #c93f00);
-        background: linear-gradient(45deg, #f99c7e, #c93f00);
-        height: 100%;
-        border-radius: 0.1rem;
-        margin-top: 1.2rem;
-        padding-top: 0.2rem;
-    }
-    .phone-img:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: -o-radial-gradient(55% 42%, circle, rgba(0, 0, 0, 0), #000),
-            url("./src/assets/images/noise.svg");
-        background: radial-gradient(circle at 55% 42%, rgba(0, 0, 0, 0), #000),
-            url("./src/assets/images/noise.svg");
-        -webkit-filter: contrast(200%);
-        filter: contrast(200%);
-        mix-blend-mode: screen;
-        opacity: 0.5;
-    }
-    .phone-message {
-        display: -webkit-box;
-        display: -ms-flexbox;
+<style lang="scss">
+    .projects {
         display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        padding: 0 0.5rem;
-    }
-    .phone-message img {
-        width: 1.8rem;
-        height: 1.8rem;
-        border-radius: 100%;
-    }
-    .phone-message > span {
-        -webkit-box-flex: 1;
-        -ms-flex: 1;
-        flex: 1;
-        margin-left: 0.5rem;
-        text-align: left;
-    }
-    .phone-message > span p {
-        font-family: "Karla", sans-serif;
-        font-size: 0.7rem;
-        font-weight: 700;
-        color: white;
-        width: 100%;
-    }
-    .phone-message > span small {
-        font-family: "Karla", sans-serif;
-        font-size: 0.6rem;
-        display: block;
-        color: #e8b8ac;
-    }
-    .phone-search {
-        background-color: #e27854bd;
-        display: block;
-        height: 1.4rem;
-        margin: 0.5em;
-        border-radius: 0.2rem;
-    }
+        flex-direction: column;
+        row-gap: 1rem;
 
-    @media screen and (max-width: 900px) {
-        .phone {
-            width: 200px;
+        &__link {
+            background-color: rgba(29, 69, 101, 0.3);
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 0.6rem;
+            padding: 0.6rem 0.6rem 0.6rem 1.2rem;
+            text-decoration: none;
+            transition:
+                border 0.2s ease-in,
+                scale 0.1s ease-in;
+            border: 1px solid transparent;
+
+            @media screen and (min-width: 550px) {
+                & {
+                    flex-direction: row;
+                }
+            }
+
+            &:hover {
+                border-color: rgb(40, 68, 98);
+                scale: 1.01;
+            }
+        }
+
+        &__desc {
+            font:
+                300 0.7rem/1.65 "Martian Mono", serif;
+            color: rgb(122 149 172);
+        }
+
+        &__info {
+            width: 100%;
+
+            @media screen and (min-width: 550px) {
+                & {
+                    width: 55%;
+                }
+            }
+        }
+
+        &__tech {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            column-gap: 0.5rem;
+            padding-left: 0;
+
+            &_list {
+                list-style-type: none;
+                position: relative;
+
+                img {
+                    width: 1.5rem;
+                    height: 1.5rem;
+
+                    @media screen and (min-width: 550px) {
+                        & {
+                            width: 1.4rem;
+                            height: 1.4rem;
+                        }
+                    }
+                }
+
+                &:after {
+                    content: attr(data-tooltip);
+                    position: absolute;
+                    top: 0.7rem;
+                    left: 0.5rem;
+                    z-index: 2;
+                    visibility: hidden;
+                    opacity: 0;
+                    font: 300 0.65rem/1.6 "Martian Mono";
+                    transition: all 0.1s ease-in;
+                    background-color: rgb(255, 255, 255);
+                    pointer-events: none;
+                    border-radius: 0.5rem;
+                    padding: 0 0.4rem;
+                    color: rgb(9, 44, 86);
+                    mix-blend-mode: color-dodge;
+                }
+
+                &:hover {
+                    &::after {
+                        visibility: visible;
+                        top: -1rem;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        &__screens {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+
+            @media screen and (min-width: 550px) {
+                & {
+                    justify-content: flex-end;
+                }
+            }
+
+            &_img {
+                width: auto;
+                height: 11rem;
+                border-radius: 0.4rem;
+                margin-left: -0.2rem;
+                box-shadow: 0 0 1rem 0 rgba(4, 47, 84, 0.188);
+
+                @media screen and (min-width: 550px) {
+                    & {
+                        margin-left: -1.5rem;
+                    }
+                }
+            }
         }
     }
 </style>

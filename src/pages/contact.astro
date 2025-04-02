@@ -1,0 +1,124 @@
+---
+import { Image } from "astro:assets";
+import Close from "@components/Close.astro";
+import Layout from "@layout/Layout.astro";
+---
+
+<Layout title="Contact Me">
+    <main>
+        <Close />
+        <h2>Contact Me</h2>
+        <div class="contact__experiences">
+            <span class="contact__img">
+                <Image src={`/images/phone.svg`} alt={'Email Address'} width={32} height={32} />
+            </span>
+            <span class="contact__company">
+                <p class="contact__title"> Email Address </p>
+                <small class="contact__date"> <a href="mailto:roydesign@outlook.com">roydesign@outlook.com</a> </small>
+            </span>
+        </div>
+        <div class="contact__experiences">
+            <span class="contact__img">
+                <Image class="contact__img" src={`/images/email.svg`} alt={'Email Address'} width={32} height={32} />
+            </span>
+            <span class="contact__company">
+                <p class="contact__title"> Mobile </p>
+                <small class="contact__date"> <a href="tel:+639177069796">+639177069796</a> </small>
+            </span>
+        </div>
+        <div class="contact__experiences">
+            <span class="contact__img">
+                <Image class="contact__img" src={`/images/linkedin.svg`} alt={'Email Address'} width={32} height={32} />
+            </span>
+            <span class="contact__company">
+                <p class="contact__title"> LinkedIn </p>
+                <small class="contact__date"> <a href="https://www.linkedin.com/in/roy-buhay/" target="_blank">linkedin.com/in/roy-buhay/</a> </small>
+            </span>
+        </div>
+    </main>
+</Layout>
+
+<style lang="scss">
+    main {
+        width: 100%;
+        height: auto;
+        max-width: 35rem;
+        margin: 0 auto 4rem;
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (min-width: 550px) {
+            & {
+                margin-top: 2rem;
+            }
+        }
+
+        h2 {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .contact {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        row-gap: 1rem;
+
+        @media screen and (min-width: 550px) {
+            & {
+                flex-direction: row;
+                column-gap: 2rem;
+                row-gap: 0;
+            }
+        }
+
+        &__all {
+            display: inline-block;
+            font: 400 0.7rem/1 "Martian Mono", serif;
+            color: rgb(78, 107, 136);
+            text-decoration: underline;
+            margin-top: 1.1rem;
+            padding: 0;
+        }
+
+        &__experiences {
+            display: flex;
+            align-items: flex-start;
+            column-gap: 0.8rem;
+            margin-bottom: 1.5rem
+        }
+
+        &__date {
+            display: block;
+            color: rgb(98, 124, 151);
+            font-size: 75%;
+            margin-top: 0.1rem;
+
+            a {
+                text-decoration: none;
+            }
+        }
+
+        &__title {
+            font-size: 0.75rem;
+            font-weight: 300;
+            line-height: 1.7;
+            margin: 0;
+            color: rgb(255, 255, 255);
+        }
+
+        &__img {
+            overflow: hidden;
+            width: 1.8rem;
+            height: 1.8rem;
+            border-radius: 0.5rem;
+
+            img {
+                width: 1.8rem;
+                height: 1.8rem;
+                display: block;
+            }
+        }
+    }
+</style>

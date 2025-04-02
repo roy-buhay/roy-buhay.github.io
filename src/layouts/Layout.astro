@@ -1,517 +1,334 @@
 ---
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+
 interface Props {
-    title: string;
+  title: string;
 }
 const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="description" content="Astro description" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300;400;500;600&family=DM+Serif+Display&family=Karla:wght@300;400;500;600;700&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
-            rel="stylesheet"
-        />
-    </head>
-    <body class="blur">
-        <slot />
-        <style is:global>
-            :root {
-                --base-color: rgb(4 30 57);
-                --main-color: rgb(7 41 76);
-                --secondary-color: rgb(7 53 95);
-                --secondary-hover-color: rgb(4 47 86);
-                --tertiary-color: rgb(4 47 84);
-                --tertiary-hover-color: rgb(4 44 80);
-                --close-bg-color: rgb(27 68 113);
-                --close-text-color: rgb(91 119 148);
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Roy Jose Buhay - Software Developer" />
+    <meta
+      property="og:description"
+      content="Software Developer | React | Next.js | React Native | Expo | TypeScript | Node.js | UI"
+    />
+    <meta property="og:image" content="/images/meta-cover.jpg" />
 
-                --page-title-color: #dee5ec;
-                --page-subtitle-color: #fff;
-                --title-color: #dee5ec;
-                --description-color: rgb(115 138 158);
-                --page-title: 800 3.4rem/1 "Chivo Mono", serif;
-                --page-subtitle: 800 1.8rem/1 "Chivo Mono", serif;
-                --page-subtitle-mono: 600 1.7rem/1.4 "Chivo Mono";
-                --title: 800 1rem/1 "Karla", "Chivo Mono";
-                --description: 300 0.85rem/1.4 "Chivo Mono";
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:title"
+      content="Roy Jose Buhay - Software Developer"
+    />
+    <meta
+      property="twitter:description"
+      content="Software Developer | React | Next.js | React Native | Expo | TypeScript | Node.js | UI"
+    />
+    <meta property="twitter:image" content="/images/meta-cover.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300;400;500;600;700;800&family=DM+Serif+Display&family=Karla:wght@300;400;500;600;700;800&family=Martian+Mono:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- {Astro.url.pathname !== "/" && <Header />} -->
+    <slot />
+    <Footer />
 
-                --max-width: 1250px;
-                --max-height: 42rem;
-                --card-padding: 2.3rem;
+    <style is:global>
+      :root {
+        --mobile-width: 560px;
 
-                --corner-radius: 0.4rem;
+        --base-color: rgb(4 30 57);
+        --main-color: rgb(7 41 76);
+        --secondary-color: rgb(7 53 95);
+        --secondary-hover-color: rgb(4 47 86);
+        --tertiary-color: rgb(4 47 84);
+        --tertiary-hover-color: rgb(4 44 80);
+        --close-bg-color: rgb(27 68 113);
+        --close-text-color: rgb(91 119 148);
 
-                --base-font: system-ui, sans-serif;
+        --page-title-color: #dee5ec;
+        --page-subtitle-color: #fff;
+        --title-color: #dee5ec;
+        --description-color: rgb(115 138 158);
+        --page-title: 800 3.4rem/1 "Chivo Mono", serif;
+        --page-subtitle: 800 1.8rem/1 "Chivo Mono", serif;
+        --page-subtitle-mono: 600 1.7rem/1.4 "Chivo Mono";
+        --title: 800 1rem/1 "Karla", "Chivo Mono";
+        --description: 300 0.85rem/1.4 "Chivo Mono";
 
-                --accent: 136, 58, 234;
-                --accent-light: 224, 204, 250;
-                --accent-dark: 49, 10, 101;
-                --accent-gradient: linear-gradient(
-                    45deg,
-                    rgb(var(--accent)),
-                    rgb(var(--accent-light)) 30%,
-                    white 60%
-                );
-            }
+        --max-width: 1250px;
+        --max-height: 42rem;
+        --card-padding: 2.3rem;
 
-            @media screen and (max-width: 900px) {
-                :root {
-                    --max-height: unset;
-                    --content-mainpadding: 3rem 1rem 0;
-                    --content-padding: 1rem 1rem;
-                    --page-title: 800 2.2rem/1 "Chivo Mono", serif;
-                    --page-subtitle: bold 1.5rem/1 "Chivo Mono", serif;
-                }
-            }
+        --corner-radius: 0.4rem;
 
-            ::-webkit-scrollbar {
-                width: 6px;
-                height: 5px;
-            }
-            ::-webkit-scrollbar-track {
-                /* background: #041f38; */
-            }
-            ::-webkit-scrollbar-thumb {
-                background: #0c3e6b;
-                border-radius: 0.5rem;
-            }
-            ::-webkit-scrollbar-thumb:hover {
-                background: #9e9e9e;
-            }
+        --base-font: system-ui, sans-serif;
 
-            *,
-            *::before,
-            *::after {
-                box-sizing: border-box;
-            }
+        --accent: 136, 58, 234;
+        --accent-light: 224, 204, 250;
+        --accent-dark: 49, 10, 101;
+        --accent-gradient: linear-gradient(
+          45deg,
+          rgb(var(--accent)),
+          rgb(var(--accent-light)) 30%,
+          white 60%
+        );
+      }
 
-            html {
-                -moz-text-size-adjust: none;
-                -webkit-text-size-adjust: none;
-                text-size-adjust: none;
-            }
+      @media screen and (max-width: 900px) {
+        :root {
+          --max-height: unset;
+          --content-mainpadding: 3rem 1rem 0;
+          --content-padding: 1rem 1rem;
+          --page-title: 800 2.2rem/1 "Chivo Mono", serif;
+          --page-subtitle: bold 1.5rem/1 "Chivo Mono", serif;
+        }
+      }
 
-            body,
-            h1,
-            h2,
-            h3,
-            h4,
-            p,
-            figure,
-            blockquote,
-            dl,
-            dd {
-                margin-block-end: 0;
-            }
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        /* background: #041f38; */
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #0c3e6b;
+        border-radius: 0.5rem;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #9e9e9e;
+      }
 
-            ul[role="list"],
-            ol[role="list"] {
-                list-style: none;
-            }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
 
-            body {
-                min-height: 100vh;
-                line-height: 1.5;
-                margin: 0;
-                transition: filter 0.7s ease-out;
-            }
+      html {
+        -moz-text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+        text-size-adjust: none;
+      }
 
-            h1,
-            h2,
-            h3,
-            h4,
-            button,
-            input,
-            label {
-                line-height: 1.1;
-            }
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      p,
+      figure,
+      blockquote,
+      dl,
+      dd {
+        margin-block-end: 0;
+      }
 
-            h1,
-            h2,
-            h3,
-            h4 {
-                text-wrap: balance;
-            }
+      ul[role="list"],
+      ol[role="list"] {
+        list-style: none;
+      }
 
-            a:not([class]) {
-                text-decoration-skip-ink: auto;
-                color: currentColor;
-            }
+      body {
+        min-height: 100vh;
+        margin: 0;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
 
-            img,
-            picture {
-                max-width: 100%;
-                display: block;
-            }
+      h1,
+      h2,
+      h3,
+      h4,
+      button,
+      input,
+      label {
+        line-height: 1.1;
+      }
 
-            input,
-            button,
-            textarea,
-            select {
-                font: inherit;
-            }
+      h1,
+      h2,
+      h3,
+      h4 {
+        text-wrap: balance;
+      }
 
-            textarea:not([rows]) {
-                min-height: 10em;
-            }
+      a:not([class]) {
+        text-decoration-skip-ink: auto;
+        color: currentColor;
+      }
 
-            :target {
-                scroll-margin-block: 5ex;
-            }
+      img,
+      picture {
+        max-width: 100%;
+        display: block;
+      }
 
-            html {
-                font-family: var(--base-font);
-                background: var(--main-color);
-                scroll-behavior: smooth;
-                height: 100%;
-                width: 100%;
-            }
-            body {
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
+      input,
+      button,
+      textarea,
+      select {
+        font: inherit;
+      }
 
-            h1 {
-                text-wrap: balance;
-                font: var(--page-title);
-                color: var(--page-title-color);
-            }
+      textarea:not([rows]) {
+        min-height: 10em;
+      }
 
-            h3 {
-                font: var(--page-subtitle);
-                color: var(--page-subtitle-color);
-                margin-top: 0;
-                margin-bottom: 0.4rem;
-            }
+      :target {
+        scroll-margin-block: 5ex;
+      }
 
-            p {
-                text-wrap: balance;
-                font: var(--description);
-                color: var(--description-color);
-                line-height: 1.5;
-            }
+      html {
+        scroll-behavior: smooth;
+        height: 100%;
+        width: 100%;
+      }
+      body {
+        font-family: var(--base-font);
+        background: var(--main-color);
+        width: 100%;
+        height: 100%;
+      }
 
-            .relative {
-                position: relative;
-            }
+      body:after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+            circle at 25% -10%,
+            rgba(0, 0, 0, 0),
+            rgb(0, 0, 0)
+          ),
+          url(/images/noise.svg);
+        -webkit-filter: contrast(300%);
+        filter: contrast(300%);
+        mix-blend-mode: var(--screen);
+        opacity: 0.2;
+        z-index: -1;
+      }
 
-            .details {
-                transform: translateX(0) !important;
-            }
+      section {
+        margin-bottom: 4.5rem;
 
-            /****************/
-            /*     Modal    */
-            /****************/
-            .modal {
-                /* --animation-in-settings: 600ms ease forwards;
-                --animation-out-settings: 600ms ease forwards; */
+        &:last-of-type {
+          margin-bottom: 2rem;
+        }
+      }
 
-                /* -webkit-animation: slideDown var(--animation-in-settings);
-                animation: slideDown var(--animation-in-settings); */
+      h1 {
+        text-wrap: balance;
+        font:
+          500 2rem/1.1 "Chivo Mono",
+          serif;
+        color: #fff;
+      }
 
-                position: fixed;
-                /* top: 0;
-                left: 50%; */
-                transform: translate(0, 250%);
-                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                transition-delay: 0.15s;
-                background-color: var(--secondary-color);
+      h2 {
+        text-wrap: balance;
+        font:
+          400 1rem/1 "Chivo Mono",
+          serif;
+        color: #fff;
+        margin-bottom: 1.5rem;
+      }
 
-                width: 100%;
-                height: 100%;
-                max-width: var(--max-width);
-                max-height: var(--max-height);
+      h3 {
+        font: var(--page-subtitle);
+        color: var(--page-subtitle-color);
+        margin-top: 0;
+        margin-bottom: 0.4rem;
+      }
 
-                align-items: start;
-                justify-content: space-between;
-                border-radius: 0.7rem;
-                z-index: 999;
-                overflow: hidden;
-            }
-            .modal:after {
-                content: "";
-                position: absolute;
-                z-index: -1;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: -o-radial-gradient(
-                        20% 30%,
-                        circle,
-                        rgba(0, 0, 0, 0),
-                        #000
-                    ),
-                    url("../../src/assets/images/noise.svg");
-                background: radial-gradient(
-                        circle at 20% 30%,
-                        rgba(0, 0, 0, 0),
-                        #000
-                    ),
-                    url("../../src/assets/images/noise.svg");
-                -webkit-filter: contrast(200%);
-                filter: contrast(250%);
-                mix-blend-mode: screen;
-                opacity: 0.5;
-            }
-            .modal__btn {
-                position: absolute;
-                top: 0;
-                right: 0;
-                z-index: 2;
-                width: 3rem;
-                height: 3rem;
-                margin: 0.5rem;
-                padding: 0.5rem;
-                font-size: 1.5rem;
-                color: var(--close-text-color);
-                appearance: none;
-                border: none;
-                border-radius: 100%;
-                background-color: var(--close-bg-color);
-                transition: transform 0.1s ease-out;
-                cursor: pointer;
-            }
-            .modal__btn:active {
-                transform: scale(0.9);
-            }
-            .modal.show {
-                /* -webkit-animation: slideUp var(--animation-in-settings);
-                animation: slideUp var(--animation-in-settings); */
-                transform: translate(0%, 0%);
-            }
-            .modal.hide {
-                -webkit-animation: slideDown var(--animation-in-settings);
-                animation: slideDown var(--animation-in-settings);
-            }
+      p {
+        /* text-wrap: balance; */
+        font:
+          300 0.75rem/1.9 "Martian Mono",
+          serif;
+        color: rgb(112, 145, 176);
+      }
 
-            /****************/
-            /*     Card     */
-            /****************/
-            .card {
-                border-radius: var(--corner-radius);
-                overflow: hidden;
-            }
-            .card__content {
-                text-align: left;
-                position: relative;
-                z-index: 2;
-                background-color: var(--secondary-color);
-                border-radius: var(--corner-radius);
-                padding: var(--card-padding);
-                cursor: pointer;
-                overflow: hidden;
-                transition: transform 0.1s ease-out;
-            }
-            .card__content:after {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                opacity: 0.5;
-                background: -o-radial-gradient(
-                        65% 15%,
-                        circle,
-                        rgba(0, 0, 0, 0),
-                        #000
-                    ),
-                    url("../../src/assets/images/noise.svg");
-                background: radial-gradient(
-                        circle at 65% 15%,
-                        rgba(0, 0, 0, 0),
-                        #000
-                    ),
-                    url("../../src/assets/images/noise.svg");
-                -webkit-filter: contrast(200%);
-                filter: contrast(250%);
-                mix-blend-mode: screen;
-            }
-            .card__content:active {
-                background-color: var(--secondary-hover-color);
-                transform: scale(0.99);
-            }
-            .card__img {
-                width: 100%;
-                height: auto;
-            }
-            @media screen and (max-width: 1200px) {
-                .card__img {
-                    width: 420px;
-                    min-width: 420px;
-                    margin-left: -1rem;
-                }
-            }
-            @media screen and (max-width: 1024px) {
-                .card__content {
-                    height: 22rem;
-                    width: 95%;
-                    margin: 0 auto;
-                }
-                .card__img {
-                    min-width: unset;
-                    margin-top: 1rem;
-                    margin-left: 0;
-                }
-            }
-            @media screen and (max-width: 900px) {
-                .card__content {
-                    height: 26rem;
-                }
-                .card__img {
-                    width: 500px;
-                    margin: 20px auto 0;
-                    max-width: unset;
-                }
-            }
-            @media screen and (max-width: 600px) {
-                .card__content {
-                    height: 21rem;
-                }
-                .card__img {
-                    width: 360px;
-                    margin: 20px auto 0;
-                    min-width: unset;
-                    max-width: unset;
-                    position: relative;
-                    left: -1rem;
-                }
-            }
+      main,
+      header {
+        max-width: 35rem;
+        margin: 0 auto;
+        padding: 0 1rem;
 
-            /****************/
-            /*  Misc  */
-            /****************/
-            .projects__container .splide {
-                pointer-events: none !important;
-            }
-            .card__content .about-illustration {
-                width: 92% !important;
-                transform: scale(0.68) !important;
-                left: 4rem;
-                top: -2rem;
-            }
-            .card__content .man {
-                bottom: 1rem !important;
-                left: -1rem !important;
-            }
-            .card__content .truck {
-                display: none !important;
-            }
-            .card__content .tech {
-                top: 130px !important;
-                left: -110px !important;
-            }
-            .card__content .deers > span:first-of-type {
-                bottom: 2rem !important;
-                left: 9rem !important;
-            }
-            .card__content .tech div {
-                width: 45px !important;
-                height: 45px !important;
-            }
-            .card__content .tech span:after {
-                width: 45px !important;
-                height: 45px !important;
-            }
-            @media screen and (max-width: 900px) {
-                .card__content .about-illustration {
-                    width: 25rem !important;
-                    transform: scale(0.62) !important;
-                    left: 0.8rem;
-                    top: -2.5rem;
-                }
-                .card__content .tree {
-                    scale: 0.9 !important;
-                }
-            }
+        @media screen and (min-width: 600px) {
+          & {
+            padding: 0;
+          }
+        }
+      }
 
-            /* .show-content > .about .about-texts > div,
-            .show-content > .projects {
-                animation: show 0.8s 0.45s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-            }
+      footer {
+        font:
+          300 0.65rem/1.65 "Martian Mono",
+          serif;
+        color: rgb(65, 85, 102);
+        text-align: center;
+        margin-bottom: 2rem;
+      }
 
-            .hide-content > .about .about-texts > div,
-            .hide-content > .projects {
-                animation: hide 0.8s 0.45s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-            }
+      /****************/
+      /*  Animations  */
+      /****************/
+      @keyframes slideUp {
+        from {
+          transform: translateY(100%);
+        }
 
-            @keyframes show {
-                0% {
-                    content-visibility: hidden;
-                    opacity: 0;
-                    transform: translateY(20%);
-                }
+        to {
+          transform: translateY(0);
+        }
+      }
 
-                100% {
-                    content-visibility: visible;
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            } */
+      @keyframes slideDown {
+        from {
+          transform: translateY(0);
+        }
 
-            @keyframes hide {
-                0% {
-                    content-visibility: visible;
-                    opacity: 0;
-                }
+        to {
+          transform: translateY(250%);
+        }
+      }
 
-                100% {
-                    content-visibility: hidden;
-                    opacity: 1;
-                }
-            }
-
-            /****************/
-            /*  Animations  */
-            /****************/
-            @keyframes slideUp {
-                from {
-                    transform: translateY(100%);
-                }
-
-                to {
-                    transform: translateY(0);
-                }
-            }
-
-            @keyframes slideDown {
-                from {
-                    transform: translateY(0);
-                }
-
-                to {
-                    transform: translateY(250%);
-                }
-            }
-
-            @keyframes float {
-                0% {
-                    transform: translatey(0);
-                }
-                50% {
-                    transform: translatey(-4px);
-                }
-                100% {
-                    transform: translatey(0);
-                }
-            }
-        </style>
-    </body>
+      @keyframes float {
+        0% {
+          transform: translatey(0);
+        }
+        50% {
+          transform: translatey(-4px);
+        }
+        100% {
+          transform: translatey(0);
+        }
+      }
+    </style>
+  </body>
 </html>

@@ -1,0 +1,182 @@
+---
+import { Image } from "astro:assets";
+import Close from "@components/Close.astro";
+import Layout from "@layout/Layout.astro";
+import { about } from "@data/about";
+
+type About = (typeof about)[number];
+---
+
+<Layout title="Work History">
+    <main>
+        <Close />
+        <h2>Work History</h2>
+        <div class="about">
+        {
+                about.map((data: About) => (
+                    <article class="about__experiences">
+                        <small class="about__date">{data.timestamp}</small>
+                        <span class="about__info">
+                            <span class="about__company">
+                                <Image class="about__img" src={`/images/${data.icon}`} alt={data.company} width={26} height={26} />
+                                <p class="about__title">{data.company}</p>
+                            </span>
+                            <p class="about__roles">{data.role}</p>
+                            {
+                                data.description.map(data => (
+                                    <p class="about__desc">{data}</p>
+                                ))
+                            }
+                        </span>
+                    </article>
+                ))
+            } 
+        </div>
+    </main>
+</Layout>
+
+<style lang="scss">
+    main {
+        width: 100%;
+        height: auto;
+        max-width: 35rem;
+        margin: 0 auto 4rem;
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (min-width: 550px) {
+            & {
+                margin-top: 2rem;
+            }
+        }
+
+        h2 {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .about {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 3rem;  
+        padding-left: 2.4rem;  
+
+        &:before {
+            content: "";
+            background: rgba(40, 68, 98, 0.3);
+            width: 1px;
+            height: 99%;
+            position: absolute;
+            top: 10px;
+            left: 8px;
+        }
+
+        @media screen and (min-width: 550px) {
+            & {
+                padding-left: 0;  
+            }
+            &:before {
+                content: none;
+            }
+        }
+
+        &__company {
+            display: flex;
+            align-items: center;
+            column-gap: 0.6rem;
+
+            & img {
+                border-radius: 0.5rem;
+            }
+        }
+
+
+        &__experiences {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            position: relative;
+
+            &:before {
+                content: "";
+                background: rgb(50, 82, 115);
+                width: 0.4rem;
+                height: 0.4rem;
+                position: absolute;
+                top: 10px;
+                left: -33px;
+                z-index: 2;
+                border-radius: 100%;
+            }
+
+            @media screen and (min-width: 550px) {
+                & {
+                    flex-direction: row;
+                }
+                &:before {
+                    content: none;
+                }
+            }
+        }
+
+        &__date {
+            color: rgb(255, 255, 255);
+            font-size: 75%;
+            order: 2;
+            margin-top: 1rem;
+
+            @media screen and (min-width: 550px) {
+                & {
+                    color: rgb(82, 116, 151);
+                    order: 1;
+                    width: 20%;
+                    margin-top: 0.2rem;
+                }
+            }
+        }
+
+        &__info {
+            flex: 1;
+
+            @media screen and (min-width: 550px) {
+                & {
+                    order: 2;
+                }
+            }
+        }
+
+        &__title {
+            font-size: 0.75rem;
+            font-weight: 300;
+            margin: 0;
+            color: rgb(255, 255, 255);
+        }
+
+        &__roles {
+            color: rgb(74, 121, 162);
+            margin-top: 0.3rem;
+            margin-bottom: 1rem;
+            font-size: 0.7rem;
+            font-weight: 300;
+        }
+
+        &__desc {
+            font-size: 0.7rem;
+            margin-bottom: 0.3rem;
+
+            &:before {
+                content: "■";
+                display: inline-block;
+                margin-right: 0.6rem;
+                font-size: 0.5rem;
+                position: relative;
+                top: -0.1rem;
+                color: #eef6ff;
+            }
+        }
+    }
+</style>

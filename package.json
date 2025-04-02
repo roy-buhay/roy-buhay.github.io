@@ -7,15 +7,19 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "predeploy": "astro build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@splidejs/splide": "^4.1.4",
     "astro": "^3.3.3",
     "nanostores": "^0.10.0",
     "sharp": "^0.33.4"
   },
   "devDependencies": {
     "prettier": "^3.2.5",
-    "prettier-plugin-astro": "^0.13.0"
+    "prettier-plugin-astro": "^0.13.0",
+    "sass": "^1.86.0"
   }
 }

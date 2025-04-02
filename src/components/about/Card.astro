@@ -1,23 +1,131 @@
 ---
 import { Image } from "astro:assets";
-import Illustration from "@components/about/Illustration.astro";
+import { about } from "@data/about";
+
+type About = (typeof about)[number];
 ---
 
-<div data-about-card class="animate card">
-    <div class="card__content">
-        <h3 class="animate">About Me</h3>
-        <p class="animate">A bit of background and what I'm studying</p>
-        <div class="animate card__img">
-            <Illustration />
-        </div>
+<section>
+    <h2>Work History</h2>
+    <div class="about">
+        <!-- {
+            about.map((data: About) => (
+                <article class="about__experiences">
+                    <small class="about__date">{data.timestamp}</small>
+                    <span class="about__info">
+                        <p class="about__title">{data.company}</p>
+                        <p class="about__roles">{data.role}</p>
+                        <p class="about__desc">{data.description}</p>
+                    </span>
+                </article>
+            ))
+        } -->
+        {
+            about.slice(0, 3).map((data: About) => (
+                <article class="about__experiences">
+                    <Image class="about__img" src={`/images/${data.icon}`} alt={data.company} width={28} height={28} />
+                    <span class="about__company">
+                        <p class="about__title"> {data.company} </p>
+                        <small class="about__date">{data.timestamp}</small>
+                    </span>
+                </article>
+            ))
+        }
     </div>
-</div>
+    <a href="/about" class="about__all" title="View Companies">View Companies</a>
+</section>
 
-<style>
-    .card__content {
-        background-color: var(--secondary-color);
-    }
-    .card__content:active {
-        background-color: var(--secondary-hover-color);
+<style lang="scss">
+    // .about {
+    //     display: flex;
+    //     flex-direction: column;
+    //     align-items: flex-start;
+    //     row-gap: 3rem;
+
+    //     &__experiences {
+    //         display: flex;
+    //         align-items: flex-start;
+    //         justify-content: center;
+    //     }
+
+    //     &__date {
+    //         width: 20%;
+    //         color: rgb(78, 107, 136);
+    //         font-size: 75%;
+    //     }
+
+    //     &__info {
+    //         flex: 1;
+    //     }
+
+    //     &__title {
+    //         font-size: 0.75rem;
+    //         font-weight: 300;
+    //         margin: 0;
+    //         color: rgb(255, 255, 255);
+    //     }
+
+    //     &__roles {
+    //         color: rgb(74, 121, 162);
+    //         margin-top: 0.3rem;
+    //         margin-bottom: 1rem;
+    //         font-size: 0.7rem;
+    //         font-weight: 300;
+    //     }
+
+    //     &__desc {
+    //         font-size: 0.7rem;
+    //     }
+    // }
+
+    .about {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        row-gap: 1rem;
+
+        @media screen and (min-width: 550px) {
+            & {
+                flex-direction: row;
+                column-gap: 2rem;
+                row-gap: 0;
+            }
+        }
+
+        &__all {
+            display: inline-block;
+            font: 400 0.7rem/1 "Martian Mono", serif;
+            color: rgb(78, 107, 136);
+            text-decoration: underline;
+            margin-top: 1.1rem;
+            padding: 0;
+        }
+
+        &__experiences {
+            display: flex;
+            align-items: flex-start;
+            column-gap: 0.8rem;
+        }
+
+        &__date {
+            display: block;
+            color: rgb(78, 107, 136);
+            font-size: 75%;
+            margin-top: 0.1rem;
+        }
+
+        &__title {
+            font-size: 0.75rem;
+            font-weight: 300;
+            line-height: 1.7;
+            margin: 0;
+            color: rgb(255, 255, 255);
+        }
+
+        &__img {
+            background-color: rgb(255, 255, 255);
+            border-radius: 0.5rem;
+            margin-top: 0.2rem;
+        }
     }
 </style>
