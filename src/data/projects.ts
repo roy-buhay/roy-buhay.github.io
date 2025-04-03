@@ -90,7 +90,7 @@ export const projects = [
       "Push Notification",
     ],
     technologies: [
-      "reactnative",
+      "react",
       "expo",
       "typescript",
       "node",

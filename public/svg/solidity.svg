@@ -1,53 +1,15 @@
-<<<<<<< HEAD
-<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_1532_7576)">
-<rect width="16" height="16" rx="8" fill="white"/>
-<g clip-path="url(#clip1_1532_7576)">
-<mask id="mask0_1532_7576" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="2" y="2" width="12" height="12">
-<path d="M13.6807 8C13.6807 4.86266 11.1373 2.31934 8 2.31934C4.86266 2.31934 2.31934 4.86266 2.31934 8C2.31934 11.1373 4.86266 13.6807 8 13.6807C11.1373 13.6807 13.6807 11.1373 13.6807 8Z" fill="white"/>
-</mask>
-<g mask="url(#mask0_1532_7576)">
-<mask id="mask1_1532_7576" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="1" width="14" height="14">
-<path d="M14.3022 1.698H1.69824V14.302H14.3022V1.698Z" fill="white"/>
-</mask>
-<g mask="url(#mask1_1532_7576)">
-<path d="M8.00023 14.302C11.4807 14.302 14.3022 11.4805 14.3022 7.99998C14.3022 4.51949 11.4807 1.698 8.00023 1.698C4.51974 1.698 1.69824 4.51949 1.69824 7.99998C1.69824 11.4805 4.51974 14.302 8.00023 14.302Z" fill="white"/>
-<mask id="mask2_1532_7576" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="3" y="3" width="10" height="10">
-<path d="M12.2015 3.79883H3.79883V12.2015H12.2015V3.79883Z" fill="white"/>
-</mask>
-<g mask="url(#mask2_1532_7576)">
-<path opacity="0.45" d="M9.34496 3.79907L7.99403 6.20026H5.29395L6.64395 3.79907H9.34496Z" fill="black"/>
-<path opacity="0.6" d="M7.99351 6.20013H10.6945L9.34455 3.79907H6.64355L7.99351 6.20013Z" fill="black"/>
-<path opacity="0.8" d="M6.64388 8.60029L7.99387 6.20013L6.64388 3.79907L5.29395 6.20013L6.64388 8.60029Z" fill="black"/>
-<path opacity="0.45" d="M6.65625 12.2019L8.00715 9.80078H10.7082L9.35725 12.2019H6.65625Z" fill="black"/>
-<path opacity="0.6" d="M8.00765 9.80078H5.30664L6.65658 12.2018H9.35759L8.00765 9.80078Z" fill="black"/>
-<path opacity="0.8" d="M9.35873 7.40088L8.00879 9.80102L9.35873 12.202L10.7096 9.80102L9.35873 7.40088Z" fill="black"/>
-</g>
-</g>
-</g>
-</g>
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_2654_251)">
+<path opacity="0.45" d="M25.1159 4.00049L19.9715 13.1439H9.68945L14.8299 4.00049H25.1159Z" fill="white"/>
+<path opacity="0.6" d="M19.9717 13.1443H30.2565L25.1165 4.00098H14.8301L19.9717 13.1443Z" fill="white"/>
+<path opacity="0.8" d="M14.8299 22.2833L19.9715 13.1439L14.8299 4.00049L9.68945 13.1439L14.8299 22.2833Z" fill="white"/>
+<path opacity="0.45" d="M14.8809 35.9993L20.0252 26.856H30.3108L25.1665 35.9993H14.8809Z" fill="white"/>
+<path opacity="0.6" d="M20.025 26.856H9.74023L14.8807 35.9993H25.1663L20.025 26.856Z" fill="white"/>
+<path opacity="0.8" d="M25.1666 17.7158L20.0254 26.856L25.1666 35.9994L30.311 26.856L25.1666 17.7158Z" fill="white"/>
 </g>
 <defs>
-<clipPath id="clip0_1532_7576">
-<rect width="16" height="16" rx="8" fill="white"/>
-</clipPath>
-<clipPath id="clip1_1532_7576">
-<rect width="11.3613" height="11.3613" fill="white" transform="translate(2.31934 2.31934)"/>
-=======
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="12" cy="12" r="12" fill="white"/>
-<g clip-path="url(#clip0_674_1223)">
-<path opacity="0.45" d="M14.5595 4L11.9871 8.57225H6.8457L9.41633 4H14.5595Z" fill="black"/>
-<path opacity="0.6" d="M11.9846 8.572H17.1277L14.5572 4H9.41406L11.9846 8.572Z" fill="black"/>
-<path opacity="0.8" d="M9.4162 13.1423L11.9868 8.572L9.4162 4L6.8457 8.572L9.4162 13.1423Z" fill="black"/>
-<path opacity="0.45" d="M9.43945 20L12.0118 15.428H17.155L14.5826 20H9.43945Z" fill="black"/>
-<path opacity="0.6" d="M12.0123 15.4282H6.86914L9.43964 20.0001H14.5828L12.0123 15.4282Z" fill="black"/>
-<path opacity="0.8" d="M14.5842 10.858L12.0137 15.4283L14.5842 20.0002L17.1565 15.4283L14.5842 10.858Z" fill="black"/>
-</g>
-<defs>
-<clipPath id="clip0_674_1223">
-<rect width="16" height="16" fill="white" transform="translate(4 4)"/>
->>>>>>> origin/main
+<clipPath id="clip0_2654_251">
+<rect width="20.6208" height="32" fill="white" transform="translate(9.68945 4)"/>
 </clipPath>
 </defs>
 </svg>
