@@ -8,18 +8,6 @@ type About = (typeof about)[number];
 <section>
     <h2>Work History</h2>
     <div class="about">
-        <!-- {
-            about.map((data: About) => (
-                <article class="about__experiences">
-                    <small class="about__date">{data.timestamp}</small>
-                    <span class="about__info">
-                        <p class="about__title">{data.company}</p>
-                        <p class="about__roles">{data.role}</p>
-                        <p class="about__desc">{data.description}</p>
-                    </span>
-                </article>
-            ))
-        } -->
         {
             about.slice(0, 3).map((data: About) => (
                 <article class="about__experiences">
@@ -36,48 +24,6 @@ type About = (typeof about)[number];
 </section>
 
 <style lang="scss">
-    // .about {
-    //     display: flex;
-    //     flex-direction: column;
-    //     align-items: flex-start;
-    //     row-gap: 3rem;
-
-    //     &__experiences {
-    //         display: flex;
-    //         align-items: flex-start;
-    //         justify-content: center;
-    //     }
-
-    //     &__date {
-    //         width: 20%;
-    //         color: rgb(78, 107, 136);
-    //         font-size: 75%;
-    //     }
-
-    //     &__info {
-    //         flex: 1;
-    //     }
-
-    //     &__title {
-    //         font-size: 0.75rem;
-    //         font-weight: 300;
-    //         margin: 0;
-    //         color: rgb(255, 255, 255);
-    //     }
-
-    //     &__roles {
-    //         color: rgb(74, 121, 162);
-    //         margin-top: 0.3rem;
-    //         margin-bottom: 1rem;
-    //         font-size: 0.7rem;
-    //         font-weight: 300;
-    //     }
-
-    //     &__desc {
-    //         font-size: 0.7rem;
-    //     }
-    // }
-
     .about {
         display: flex;
         align-items: flex-start;
