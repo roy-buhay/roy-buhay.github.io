@@ -1,6 +1,6 @@
 export const about = [
   {
-    timestamp: "Present",
+    timestamp: "2022 - 2024",
     company: "Avazoo Holdings",
     name: "avazoo",
     icon: "avazoo-logo.png",
@@ -12,7 +12,7 @@ export const about = [
     ],
   },
   {
-    timestamp: "2018 - 2021",
+    timestamp: "2021 - 2022",
     company: "Apptech Gateway",
     name: "apptech",
     icon: "apptech-logo.png",
@@ -24,7 +24,7 @@ export const about = [
     ],
   },
   {
-    timestamp: "2018 - 2021",
+    timestamp: "2019 - 2021",
     company: "Entinux Ltd.",
     name: "entinux",
     icon: "entinux-logo.png",
@@ -36,7 +36,7 @@ export const about = [
     ],
   },
   {
-    timestamp: "2021 - 2022",
+    timestamp: "2018 - 2019",
     company: "Crateclub",
     name: "crateclub",
     icon: "crateclub-logo.png",
@@ -48,7 +48,7 @@ export const about = [
     ],
   },
   {
-    timestamp: "2015 - 2018",
+    timestamp: "2016 - 2018",
     company: "Nexusbond Asia Inc.",
     name: "nexusbond",
     icon: "nexusbond-logo.png",
