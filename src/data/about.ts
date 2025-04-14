@@ -6,9 +6,9 @@ export const about = [
     icon: "avazoo-logo.png",
     role: "UI Designer & Full-stack Developer",
     description: [
-      'Led complete mobile app overhaul using React Native & Expo, increasing user engagement, load times and introducing new features like seamless referral system, merchant payment integration and more',
-      'Integrated InertiaJS with Laravel 8 to handle large datasets more efficiently, improving back-office tool performance bydreducing data processing time from ~2 minutes to under 1 minute',
-      'Set up automated CI/CD pipelines using GitLab CI/CD and automated testing with Jest before AWS deployments, streamlining releases and minimizing downtime'
+      'Led a full rebuild of the company\'s mobile app, improving load times and user experience and adding key features like a referral system, location targeting, merchant payments and SDK integrations for 12,000 users',
+      'Led modernization of legacy web-app with ReactJS(Inertia) to handle large datasets more efficiently, improving back-office tool performance and reducing data processing time from ~1 minute to under ~5 seconds',
+      'Automated CI/CD pipelines using GitLab CI/CD, integrating Jest for testing to reduce deployment errors and ensure stable, on-time releases'
     ],
   },
   {
@@ -18,9 +18,9 @@ export const about = [
     icon: "apptech-logo.png",
     role: "UI Designer & Full-stack Developer",
     description: [
-      'Developed a scalable match-it game using ReactJS & Redux with complex state management across multiple product integrations',
-      'Developed RESTful API endpoints in Node.js/Express handling game logic and supporting concurrent user interactions',
-      'Optimized Laravel dashboard using performance tools, resulting in 3x faster data rendering and improved user satisfaction'
+      'Built a cross-platform matching game, deployed across all company products (mobile + web app) with complex state management for seamless synchronization. Integrated a centralized API to track and analyze user actions',
+      'Developed a scalable Node.js/Express services handling core game logic, real-time user matching, and analytics - processing concurrent player interactions',
+      'Overhauled legacy web-app’s performance and responsiveness with front-end techniques—including lazy loading, optimized asset delivery, asynchronous data loading, and throttle/debounce patterns for heavy UI interactions— and with Laravel\'s performance stack (Page Speed, Telescope, Horizon)'
     ],
   },
   {
@@ -30,9 +30,9 @@ export const about = [
     icon: "entinux-logo.png",
     role: "UI Designer & Front-end Developer",
     description: [
-      'Built a reward system mobile app with Ionic/Angular, handling high concurrent user actions daily from various activities in Hong Kong',
-      'Implemented WCAG accessibility standards expanding product reach and ensuring compliance with web accessibility guidelines',
-      'Led UI/UX design using Figma for a university feedback system, crowdsourcing app, and email management tool and more using user-centered design principles to enhance user experience'
+      'Developed multiple high-traffic mobile applications, including a dating platform, a digital rewards system, and a social services app – designed to handle thousands of concurrent daily users across Hong Kong. Optimized real-time data flows and UI performance to support diverse user activities',
+      'Implemented WCAG 2.1 AA accessibility standards across some Hong Kong government digital projects, ensuring compliance with public sector web guidelines while expanding reach to users with disabilities',
+      'Led implementation of design systems and developed reusable UI components for different projects to ensure consistency and scalability'
     ],
   },
   {
@@ -42,9 +42,9 @@ export const about = [
     icon: "crateclub-logo.png",
     role: "UI Designer & Front-end Developer",
     description: [
-      'Spearheaded front-end development workflows by introducing modern tooling like Sass, ESLint, and Sentry and setting coding standards',
-      'Implemented front-end features from Figma designs and integrated payment solutions using Stripe and PayPal',
-      'Designed UI/UX using Figma for mobile and web applications (back-office dashboards)'
+      'Spearheaded frontend development workflows, introducing modern tooling (Sass, ESLint, Sentry) and enforcing coding standards to reduce bugs and accelerate team productivity',
+      'Built accessible, SEO-optimized frontend features from Figma designs, integrating payment solutions (Stripe, PayPal) with full WCAG compliance and performance enhancement',
+      'Led UI/UX design in Figma for cross-platform apps (web + mobile) and marketing assets, streamlining design-to-dev handoff and ensuring brand consistency'
     ],
   },
   {
@@ -54,8 +54,9 @@ export const about = [
     icon: "nexusbond-logo.png",
     role: "Senior Developer / Designer",
     description: [
-      'Developed, maintained, and shipped production code for client websites primarily using HTML, CSS, Sass, JavaScript, and jQuery',
-      'Performed quality assurance tests on various sites to ensure cross browser compatibility and mobile responsiveness'
+      'Developed and deployed production-ready websites using HTML5, CSS3, Sass, JavaScript, jQuery, and WordPress',
+      'Built custom WordPress themes and plugins from scratch, leveraging Advanced Custom Fields (ACF) for dynamic content',
+      'Mentored junior developers in WordPress theme development, templating, hooks and 3rd party integration'
     ],
   },
 ]
