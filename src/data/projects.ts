@@ -1,5 +1,67 @@
 export const projects = [
   {
+    title: "get2germany",
+    desc: "ApproLearn is a learning app for medical German, designed for international doctors and nurses preparing for medical language exams (such as the FSP) and professional licensing in Germany, Austria, or Switzerland.",
+    short_desc: "ApproLearn is a learning app for medical German, designed for international doctors and nurses.",
+    task: "I implemented a rewards points and referral system web app from design to functionality, along with 3rd party integrations for different sports-related APIs.",
+    url: "https://play.google.com/store/apps/details?id=com.get2germany.fachsprachprufung&hl=en&pli=1",
+    urlText: "https://play.google.com/store/apps/details?id=com.get2germany.fachsprachprufung&hl=en&pli=1",
+    width: 7,
+    pageWidth: 8,
+    path: "get2germany-logo.webp",
+    icon: "g2g-icon.webp",
+    roles: [
+      "UI and interaction design",
+      "3rd party API integrations",
+      "Screens and components styling",
+      "Geolocation",
+      "Social media sharing",
+      "Match-It integration",
+    ],
+    technologies: ["reactnative", "expo", "typescript",  "figma"],
+    screens: [
+      {
+        path: "g2g_1.webp",
+      },
+      {
+        path: "g2g_2.webp",
+      },
+      {
+        path: "g2g_3.webp",
+      },
+    ],
+    screenshots: [
+      {
+        path: "g2g_1.webp",
+        class: "mobile",
+      },
+      {
+        path: "g2g_2.webp",
+        class: "mobile",
+      },
+      {
+        path: "g2g_3.webp",
+        class: "mobile",
+      },
+      {
+        path: "g2g_4.webp",
+        class: "mobile",
+      },
+      {
+        path: "g2g_5.webp",
+        class: "mobile",
+      },
+      {
+        path: "g2g_6.webp",
+        class: "mobile",
+      },
+      {
+        path: "g2g_7.webp",
+        class: "mobile",
+      },
+    ],
+  },
+  {
     title: "rrs",
     desc: "Rewards Ripple Solutions is a loyalty programs rewards points system with a twist.",
     short_desc: "Rewards Ripple Solutions is a loyalty programs rewards points system.",
@@ -21,50 +83,46 @@ export const projects = [
     technologies: ["typescript", "tailwind", "nextjs", "supabase", "figma"],
     screens: [
       {
-        path: "rrs-preview-3.png",
+        path: "rrs-preview-3.webp",
       },
       {
-        path: "rrs-preview-2.png",
+        path: "rrs-preview-2.webp",
       },
       {
-        path: "rrs-preview-1.png",
+        path: "rrs-preview-1.webp",
       },
     ],
     screenshots: [
-      // {
-      //   path: "login3.png",
-      //   class: "mobile",
-      // },
       {
-        path: "rrs-home3.jpg",
+        path: "rrs-home3.webp",
         class: "mobile",
       },
       {
-        path: "rrs-home-banner3.jpg",
+        path: "rrs-home-banner3.webp",
         class: "mobile",
       },
       {
-        path: "rrs-banner3.jpg",
+        path: "rrs-banner3.webp",
         class: "mobile",
       },
       {
-        path: "rrs-nfl3.jpg",
+        path: "rrs-nfl3.webp",
         class: "mobile",
       },
       {
-        path: "rrs-nfl-team-popup3.jpg",
+        path: "rrs-nfl-team-popup3.webp",
         class: "mobile",
       },
       {
-        path: "rrs-nfl-popup3.jpg",
+        path: "rrs-nfl-popup3.webp",
         class: "mobile",
       },
       {
-        path: "rrs-rewarded3.jpg",
+        path: "rrs-rewarded3.webp",
         class: "mobile",
       },
       {
-        path: "rrs-rewarded-map3.jpg",
+        path: "rrs-rewarded-map3.webp",
         class: "mobile",
       },
     ],
@@ -90,7 +148,7 @@ export const projects = [
       "Push Notification",
     ],
     technologies: [
-      "react",
+      "reactnative",
       "expo",
       "typescript",
       "node",
@@ -100,50 +158,50 @@ export const projects = [
     ],
     screens: [
       {
-        path: "avazoo-preview-3.png",
+        path: "avazoo-preview-3.webp",
       },
       {
-        path: "avazoo-preview-2.png",
+        path: "avazoo-preview-2.webp",
       },
       {
-        path: "avazoo-preview-1.png",
+        path: "avazoo-preview-1.webp",
       },
     ],
     screenshots: [
       {
-        path: "avazoo-login3.jpg",
+        path: "avazoo-login3.webp",
         class: "mobile",
       },
       {
-        path: "avazoo-home3.jpg",
+        path: "avazoo-home3.webp",
         class: "mobile",
       },
       {
-        path: "avazoo-supporters.jpg",
+        path: "avazoo-supporters.webp",
         class: "mobile",
       },
       {
-        path: "avazoo-popup5.jpg",
+        path: "avazoo-popup5.webp",
         class: "mobile",
       },
       {
-        path: "avazoo-success.jpg",
+        path: "avazoo-success.webp",
         class: "mobile",
       },
       {
-        path: "avazoo-notifications.jpg",
+        path: "avazoo-notifications.webp",
         class: "mobile",
       },
       {
-        path: "avazoo-referrals.jpg",
+        path: "avazoo-referrals.webp",
         class: "mobile",
       },
       {
-        path: "avazoo-wheel.jpg",
+        path: "avazoo-wheel.webp",
         class: "mobile",
       },
       {
-        path: "avazoo-profile3.jpg",
+        path: "avazoo-profile3.webp",
         class: "mobile",
       },
     ],
@@ -176,34 +234,34 @@ export const projects = [
     ],
     screens: [
       {
-        path: "matchit-preview-3.png",
+        path: "matchit-preview-3.webp",
       },
       {
-        path: "matchit-preview-2.png",
+        path: "matchit-preview-2.webp",
       },
       {
-        path: "matchit-preview-1.png",
+        path: "matchit-preview-1.webp",
       },
     ],
     screenshots: [
       {
-        path: "matchit-1-2.jpg",
+        path: "matchit-1-2.webp",
         class: "mobile",
       },
       {
-        path: "matchit-2.jpg",
+        path: "matchit-2.webp",
         class: "mobile",
       },
       {
-        path: "matchit-3.jpg",
+        path: "matchit-3.webp",
         class: "mobile",
       },
       {
-        path: "matchit-4.jpg",
+        path: "matchit-4.webp",
         class: "mobile",
       },
       {
-        path: "matchit-5-2.jpg",
+        path: "matchit-5-2.webp",
         class: "mobile",
       },
     ],
@@ -228,38 +286,38 @@ export const projects = [
     technologies: ["ionic", "angular", "typescript", "sass", "sketch"],
     screens: [
       {
-        path: "zeiton-preview-3.png",
+        path: "zeiton-preview-3.webp",
       },
       {
-        path: "zeiton-preview-2.png",
+        path: "zeiton-preview-2.webp",
       },
       {
-        path: "zeiton-preview-1.png",
+        path: "zeiton-preview-1.webp",
       },
     ],
     screenshots: [
       {
-        path: "zeiton-login.jpg",
+        path: "zeiton-login.webp",
         class: "mobile",
       },
       {
-        path: "zeiton-home.jpg",
+        path: "zeiton-home.webp",
         class: "mobile",
       },
       {
-        path: "zeiton-messages.jpg",
+        path: "zeiton-messages.webp",
         class: "mobile",
       },
       {
-        path: "zeiton-task.jpg",
+        path: "zeiton-task.webp",
         class: "mobile",
       },
       {
-        path: "zeiton-map.jpg",
+        path: "zeiton-map.webp",
         class: "mobile",
       },
       {
-        path: "zeiton-details.jpg",
+        path: "zeiton-details.webp",
         class: "mobile",
       },
     ],
@@ -285,38 +343,38 @@ export const projects = [
     technologies: ["laravel", "sass", "javascript", "mysql", "figma", "stripe"],
     screens: [
       {
-        path: "crateclub-preview-3.png",
+        path: "crateclub-preview-3.webp",
       },
       {
-        path: "crateclub-preview-2.png",
+        path: "crateclub-preview-2.webp",
       },
       {
-        path: "crateclub-preview-1.png",
+        path: "crateclub-preview-1.webp",
       },
     ],
     screenshots: [
       {
-        path: "crateclub-login2.jpg",
+        path: "crateclub-login2.webp",
         class: "mobile",
       },
       {
-        path: "crateclub-home2.jpg",
+        path: "crateclub-home2.webp",
         class: "mobile",
       },
       {
-        path: "crateclub-subs2.jpg",
+        path: "crateclub-subs2.webp",
         class: "mobile",
       },
       {
-        path: "crateclub-store.jpg",
+        path: "crateclub-store.webp",
         class: "mobile",
       },
       {
-        path: "crateclub-details.jpg",
+        path: "crateclub-details.webp",
         class: "mobile",
       },
       {
-        path: "crateclub-storedetails.jpg",
+        path: "crateclub-storedetails.webp",
         class: "mobile",
       },
     ],
@@ -349,30 +407,30 @@ export const projects = [
     ],
     screens: [
       {
-        path: "crypto-preview-3.png",
+        path: "crypto-preview-3.webp",
       },
       {
-        path: "crypto-preview-2.png",
+        path: "crypto-preview-2.webp",
       },
       {
-        path: "crypto-preview-1.png",
+        path: "crypto-preview-1.webp",
       },
     ],
     screenshots: [
       {
-        path: "crypto-home-desktop.jpg",
+        path: "crypto-home-desktop.webp",
         class: "desktop",
       },
       {
-        path: "crypto-home-bottom.jpg",
+        path: "crypto-home-bottom.webp",
         class: "desktop",
       },
       {
-        path: "crypto-mobile1.jpg",
+        path: "crypto-mobile1.webp",
         class: "mobile",
       },
       {
-        path: "crypto-mobile2.jpg",
+        path: "crypto-mobile2.webp",
         class: "mobile",
       },
     ],

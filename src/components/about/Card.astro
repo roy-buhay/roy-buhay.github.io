@@ -51,6 +51,7 @@ type About = (typeof about)[number];
             display: flex;
             align-items: flex-start;
             column-gap: 0.8rem;
+            flex: 1;
         }
 
         &__date {
@@ -66,6 +67,11 @@ type About = (typeof about)[number];
             line-height: 1.7;
             margin: 0;
             color: rgb(255, 255, 255);
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-clamp: 1;
+            -webkit-line-clamp: 1;
         }
 
         &__img {

@@ -18,6 +18,8 @@ type Project = (typeof projects)[number];
                             alt={project.title}
                             width={24}
                             height={24}
+                            loading="lazy"
+                            decoding="async"
                         />
                         <p class="projects__desc">{project.short_desc}</p>
                         <ul class="projects__tech">
@@ -42,6 +44,8 @@ type Project = (typeof projects)[number];
                                 alt={project.title}
                                 width={32}
                                 height={32}
+                                loading="lazy"
+                                decoding="async"
                             />
                         ))}
                     </span>

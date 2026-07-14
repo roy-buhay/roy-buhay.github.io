@@ -8,6 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "watch:images": "node scripts/watch-images.cjs",
     "predeploy": "astro build",
     "deploy": "gh-pages -d dist"
   },
