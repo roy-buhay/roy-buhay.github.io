@@ -5,10 +5,11 @@ export const stacks = [
     'ts',
     'react',
     'react_native',
+    'expo',
     'tailwind',
     'nextjs',
-    'graphql',
     'aws',
     'node',
-    'express'
+    'express',
+    'supabase'
 ]
