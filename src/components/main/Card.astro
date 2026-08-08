@@ -9,7 +9,7 @@
 <style>
     h1 {
         width: 80%;
-        margin-top: 6rem;
+        margin-top: 9rem;
 
         @media screen and (min-width: 600px) {
             & {
@@ -20,6 +20,7 @@
 
     p {
         margin-bottom: 1.2rem;
+        margin-top: 1.2rem;
     }
 
     .links {
@@ -31,8 +32,19 @@
         a {
             display: inline-block;
             margin-top: 0.5rem;
-            font: 300 0.75rem/1.6 "Martian Mono", serif;
-            color: rgb(91, 118, 145);
+            font: 300 0.85rem/1.5 "Inter", sans-serif;
+            color: #6c6c6c;
+            letter-spacing: 0px;
+            text-decoration: none;
+
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                border-bottom: 1px solid #e3e3e3;
+            }
         }
     }
 </style>

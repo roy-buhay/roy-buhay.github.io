@@ -18,7 +18,7 @@ type About = (typeof about)[number];
                         <small class="about__date">{data.timestamp}</small>
                         <span class="about__info">
                             <span class="about__company">
-                                <Image class="about__img" src={`/images/${data.icon}`} alt={data.company} width={26} height={26} />
+                                <Image class="about__img" src={`/images/${data.icon}`} alt={data.company} width={32} height={32} />
                                 <p class="about__title">{data.company}</p>
                             </span>
                             <p class="about__roles">{data.role}</p>
@@ -124,14 +124,14 @@ type About = (typeof about)[number];
         }
 
         &__date {
-            color: rgb(255, 255, 255);
+            color: #9b9b9b;
             font-size: 75%;
             order: 2;
             margin-top: 1rem;
 
             @media screen and (min-width: 550px) {
                 & {
-                    color: rgb(82, 116, 151);
+                    color: #9b9b9b;
                     order: 1;
                     width: 20%;
                     margin-top: 0.2rem;
@@ -153,11 +153,11 @@ type About = (typeof about)[number];
             font-size: 0.75rem;
             font-weight: 300;
             margin: 0;
-            color: rgb(255, 255, 255);
+            color: #9b9b9b;
         }
 
         &__roles {
-            color: rgb(74, 121, 162);
+            color: #9b9b9b;
             margin-top: 0.3rem;
             margin-bottom: 1rem;
             font-size: 0.7rem;
@@ -175,7 +175,7 @@ type About = (typeof about)[number];
                 font-size: 0.5rem;
                 position: relative;
                 top: -0.1rem;
-                color: #eef6ff;
+                color: #9b9b9b;
             }
         }
     }

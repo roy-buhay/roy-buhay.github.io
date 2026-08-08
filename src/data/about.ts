@@ -12,6 +12,18 @@ export const about = [
   //   ],
   // },
   {
+    timestamp: "2025 - 2026",
+    company: "Layers AI Inc.",
+    name: "layers",
+    icon: "sic-logo.png",
+    role: "FullStack Developer & Designer",
+    description: [
+      'Designed and built the payment backend on a new provider, handling transaction reconciliation and integration logic, and migrating from the legacy system without service disruption',
+      'Automated end-to-end delivery of webinar recordings to the learning platform, handling upload to AWS for CDN distribution through publishing on WordPress and eliminating a manual process that took roughly 4 hours per session',
+      'Modernized the web platforms by rebuilding legacy UI and streamlining the WordPress codebase removing a large number of redundant plugins in favor of custom functionality and cutting page load times by roughly half'
+    ],
+  },
+  {
     timestamp: "2025 - 2025",
     company: "Get2Germany",
     name: "get2germany",

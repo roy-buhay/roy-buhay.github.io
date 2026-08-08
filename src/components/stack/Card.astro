@@ -36,19 +36,21 @@ const stackNames: Record<string, string> = {
         align-items: center;
         justify-content: flex-start;
         flex-wrap: wrap;
-        column-gap: 0.8rem;
-        row-gap: 1rem;
+        column-gap: 0.6rem;
+        row-gap: 0.6rem;
         width: 100%;
 
         @media screen and (min-width: 550px) {
             & {
                 width: 80%;
+                column-gap: 0.8rem;
+                row-gap: 1rem;
             }
         }
 
         &__wrapper {
-            width: 2.3rem;
-            height: 2.3rem;
+            width: 2.8rem;
+            height: 2.8rem;
             overflow: hidden;
             border-radius: 100%;
             position: relative;
@@ -88,7 +90,7 @@ const stackNames: Record<string, string> = {
                 z-index: 3;
                 visibility: hidden;
                 opacity: 0;
-                font: 300 0.65rem/1.6 "Martian Mono";
+                font: 300 0.65rem/1.6 "JetBrains Mono", monospace;
                 transition: all 0.1s ease-in;
                 background-color: rgb(255, 255, 255);
                 pointer-events: none;

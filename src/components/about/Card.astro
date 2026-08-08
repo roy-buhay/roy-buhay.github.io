@@ -11,7 +11,7 @@ type About = (typeof about)[number];
         {
             about.slice(0, 3).map((data: About) => (
                 <article class="about__experiences">
-                    <Image class="about__img" src={`/images/${data.icon}`} alt={data.company} width={28} height={28} />
+                    <Image class="about__img" src={`/images/${data.icon}`} alt={data.company} width={32} height={32} />
                     <span class="about__company">
                         <p class="about__title"> {data.company} </p>
                         <small class="about__date">{data.timestamp}</small>
@@ -40,11 +40,21 @@ type About = (typeof about)[number];
 
         &__all {
             display: inline-block;
-            font: 400 0.7rem/1 "Martian Mono", serif;
-            color: rgb(78, 107, 136);
+            font: 300 0.85rem/1.5 "Inter", sans-serif;
+            color: #6c6c6c;
             text-decoration: underline;
-            margin-top: 1.1rem;
+            margin-top: 2rem;
             padding: 0;
+            text-decoration: none;
+
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                border-bottom: 1px solid #e3e3e3;
+            }
         }
 
         &__experiences {
@@ -56,17 +66,17 @@ type About = (typeof about)[number];
 
         &__date {
             display: block;
-            color: rgb(113, 133, 153);
+            color: #9b9b9b;
             font-size: 75%;
-            margin-top: 0.1rem;
+            margin-top: 0.2rem;
+            font-family: Inter;
         }
 
         &__title {
-            font-size: 0.75rem;
-            font-weight: 300;
+            font: 300 0.85rem/1.7 "Inter", sans-serif;;
             line-height: 1.7;
             margin: 0;
-            color: rgb(255, 255, 255);
+            color: #252525;
             display: -webkit-box;
             -webkit-box-orient: vertical;
             overflow: hidden;
