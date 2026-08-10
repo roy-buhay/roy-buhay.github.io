@@ -40,13 +40,15 @@ const isCurrent = (href: string) =>
             gap: 1.2rem;
             padding: 0.8rem 2rem 0.6rem ;
             border-radius: 1.4rem;
+            overflow: hidden;
+            isolation: isolate;
             background: rgba(253, 253, 253, 0.85);
             box-shadow:
                 0 0.75rem 2rem rgba(4, 30, 57, 0.04),
                 inset 0 1px 0 rgba(255, 255, 255, 0.78);
             -webkit-backdrop-filter: blur(18px) saturate(160%);
             backdrop-filter: blur(18px) saturate(160%);
-            animation: nav-fade-in-up 520ms cubic-bezier(0.22, 1, 0.36, 1) 1.45s both;
+            animation: nav-fade-in-up 520ms cubic-bezier(0.22, 1, 0.36, 1) 1.45s backwards;
         }
 
         display: flex;
