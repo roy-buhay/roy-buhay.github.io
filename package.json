@@ -13,7 +13,6 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "@splidejs/splide": "^4.1.4",
     "astro": "^3.3.3",
     "gh-pages": "^6.3.0",
     "nanostores": "^0.10.0",

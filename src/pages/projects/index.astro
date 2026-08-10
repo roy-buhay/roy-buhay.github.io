@@ -1,0 +1,325 @@
+---
+import { Image } from "astro:assets";
+import Close from "@components/Close.astro";
+import { projects } from "@data/projects";
+import Layout from "@layout/Layout.astro";
+
+const iconOverrides: Record<string, string> = {
+    blush: "/images/blush/blush-logo.png",
+    ubaware: "/images/ubaware/ubaware-logo.png",
+    rocky: "/images/rocky/rocky-logo.webp",
+};
+---
+
+<Layout title="All Works - Roy Jose Buhay">
+    <main>
+        <Close />
+        <h2>All Works</h2>
+        <ul class="works">
+            {
+                projects.map((project, index) => {
+                    const websiteScreens = project.screenshots.filter(
+                        (screen) => screen.class === "desktop",
+                    );
+                    const isWebsiteProject = websiteScreens.length > 0;
+                    const previewScreens = isWebsiteProject
+                        ? websiteScreens.slice(0, 1)
+                        : project.screenshots.slice(0, 3);
+
+                    return (
+                    <li class="works__item" style={`--work-index: ${index}`}>
+                        <a
+                            class="works__link"
+                            href={`/projects/${project.title}?from=projects`}
+                            aria-label={`View ${project.title} project`}
+                            data-preview-id={`work-preview-${index}`}
+                        >
+                            <Image
+                                class="works__icon"
+                                src={iconOverrides[project.title] ?? `/images/${project.title}/${project.icon}`}
+                                alt=""
+                                width={52}
+                                height={52}
+                                loading="lazy"
+                                decoding="async"
+                            />
+                            <span class="works__content">
+                                <span class="works__title">{project.title}</span>
+                                <span class="works__description">{project.short_desc}</span>
+                            </span>
+                            <svg
+                                class="works__arrow"
+                                width="32"
+                                height="32"
+                                viewBox="0 0 32 32"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M6.39464 12.1062L10.168 8.3329L6.39464 4.55957L5.92797 5.0329L9.22797 8.3329L5.92797 11.6329L6.39464 12.1062Z"
+                                    fill="currentColor"
+                                />
+                            </svg>
+                            <span
+                                id={`work-preview-${index}`}
+                                class:list={[
+                                    "works__preview",
+                                    { "works__preview--website": isWebsiteProject },
+                                ]}
+                                aria-hidden="true"
+                            >
+                                {previewScreens.map((screen) => (
+                                    <Image
+                                        class="works__preview-image"
+                                        src={`/images/${project.title}/${screen.path}`}
+                                        alt=""
+                                        width={isWebsiteProject ? 640 : 240}
+                                        height={isWebsiteProject ? 360 : 480}
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                ))}
+                            </span>
+                        </a>
+                    </li>
+                    );
+                })
+            }
+        </ul>
+    </main>
+</Layout>
+
+<style lang="scss">
+    main {
+        width: 100%;
+        max-width: 37rem;
+        margin: 2rem auto 4rem;
+
+        h2 {
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    .works {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        &__item {
+            border-bottom: 1px solid #eee;
+            animation: workFadeInUp 600ms cubic-bezier(0.22, 1, 0.36, 1) both;
+            animation-delay: calc(120ms + (var(--work-index) * 70ms));
+        }
+
+        &__link {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.2rem 0;
+            color: #000;
+            text-decoration: none;
+            transition:
+                transform 180ms ease,
+                opacity 180ms ease,
+                scale 160ms cubic-bezier(0.22, 1, 0.36, 1);
+
+            &:hover {
+                transform: translateX(0.25rem);
+
+                .works__arrow {
+                    transform: translateX(0.2rem);
+                }
+            }
+
+            &:focus-visible {
+                outline: 2px solid #000;
+                outline-offset: 3px;
+            }
+        }
+
+        :global(.works__icon) {
+            flex: 0 0 auto;
+            width: 3.25rem;
+            height: 3.25rem;
+            border-radius: 0.8rem;
+            object-fit: cover;
+            background: #eef0f0;
+        }
+
+        &__content {
+            display: flex;
+            flex: 1;
+            min-width: 0;
+            flex-direction: column;
+        }
+
+        &__title {
+            color: #000;
+            font: 300 0.85rem/1.7 "Inter",sans-serif;
+        }
+
+        &__description {
+            display: -webkit-box;
+            overflow: hidden;
+            color: #6c6c6c;
+            font: 300 0.8rem/1.5 "Inter", sans-serif;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4;
+            letter-spacing: 0.1px;
+        }
+
+        &__arrow {
+            flex: 0 0 auto;
+            color: #959595;
+            transition: transform 180ms ease;
+        }
+
+        &__preview {
+            position: fixed;
+            top: var(--preview-y, 0);
+            left: var(--preview-x, 0);
+            z-index: 20;
+            display: flex;
+            gap: 0.5rem;
+            width: min(24rem, calc(100vw - 2rem));
+            padding: 0.5rem;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transform: scale(0.96);
+            transform-origin: center;
+            transition:
+                opacity 160ms ease,
+                visibility 160ms ease,
+                transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform;
+
+            &.is-visible {
+                opacity: 1;
+                visibility: visible;
+                transform: scale(1);
+            }
+
+            &--website {
+                width: min(24rem, calc(100vw - 2rem));
+            }
+        }
+
+        @media screen and (max-width: 549px) {
+            &__link {
+                gap: 1rem;
+                min-height: 6.5rem;
+                padding: 1.25rem 0;
+            }
+
+            :global(.works__icon) {
+                width: 3rem;
+                height: 3rem;
+            }
+        }
+    }
+
+    :global(.works__preview-image) {
+        width: calc((100% - 1rem) / 3);
+        height: auto;
+        min-width: 0;
+        border-radius: 0.55rem;
+        object-fit: cover;
+    }
+
+    :global(.works__preview--website .works__preview-image) {
+        width: 100%;
+    }
+
+    @keyframes workFadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(16px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .works__item {
+            animation: none;
+        }
+
+        .works__preview {
+            transition: none;
+        }
+    }
+
+    @media (hover: none), (pointer: coarse) {
+        .works__preview {
+            display: none;
+        }
+    }
+</style>
+
+<script>
+    const setupWorkPreviews = () => {
+        const previewWindow = window as Window & {
+            __workPreviewAbort?: AbortController;
+        };
+
+        previewWindow.__workPreviewAbort?.abort();
+
+        if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+        const controller = new AbortController();
+        previewWindow.__workPreviewAbort = controller;
+
+        document.querySelectorAll<HTMLElement>(".works__link").forEach((link) => {
+            const previewId = link.dataset.previewId;
+            const preview = previewId
+                ? document.getElementById(previewId)
+                : null;
+
+            if (!preview) return;
+
+            if (preview.parentElement !== document.body) {
+                document.body.append(preview);
+            }
+
+            const positionPreview = (event: PointerEvent) => {
+                const offset = 20;
+                const edge = 12;
+                const { width, height } = preview.getBoundingClientRect();
+
+                let x = event.clientX + offset;
+                let y = event.clientY - height / 2;
+
+                if (x + width > window.innerWidth - edge) {
+                    x = event.clientX - width - offset;
+                }
+
+                x = Math.max(edge, Math.min(x, window.innerWidth - width - edge));
+                y = Math.max(edge, Math.min(y, window.innerHeight - height - edge));
+
+                preview.style.setProperty("--preview-x", `${x}px`);
+                preview.style.setProperty("--preview-y", `${y}px`);
+            };
+
+            link.addEventListener("pointerenter", (event) => {
+                positionPreview(event);
+                preview.classList.add("is-visible");
+            }, { signal: controller.signal });
+
+            link.addEventListener("pointermove", positionPreview, { signal: controller.signal });
+
+            link.addEventListener("pointerleave", () => {
+                preview.classList.remove("is-visible");
+            }, { signal: controller.signal });
+        });
+    };
+
+    document.addEventListener("astro:page-load", setupWorkPreviews);
+    setupWorkPreviews();
+</script>

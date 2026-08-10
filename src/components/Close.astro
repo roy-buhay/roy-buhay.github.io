@@ -1,9 +1,40 @@
-<a href="/" class="back" title="Go Back">
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.47032 10.5299C6.32987 10.3893 6.25098 10.1987 6.25098 9.99991C6.25098 9.80116 6.32987 9.61054 6.47032 9.46991L10.7203 5.21991C10.789 5.14622 10.8718 5.08712 10.9638 5.04613C11.0558 5.00514 11.1551 4.98309 11.2558 4.98132C11.3565 4.97954 11.4565 4.99807 11.5499 5.03579C11.6433 5.07351 11.7281 5.12965 11.7994 5.20087C11.8706 5.27209 11.9267 5.35692 11.9644 5.45031C12.0022 5.5437 12.0207 5.64373 12.0189 5.74443C12.0171 5.84513 11.9951 5.94445 11.9541 6.03645C11.9131 6.12845 11.854 6.21125 11.7803 6.27991L8.06032 9.99991L11.7803 13.7199C11.9128 13.8621 11.9849 14.0501 11.9815 14.2444C11.9781 14.4387 11.8994 14.6241 11.7619 14.7615C11.6245 14.8989 11.4391 14.9777 11.2448 14.9811C11.0505 14.9845 10.8625 14.9124 10.7203 14.7799L6.47032 10.5299Z" fill="rgb(105, 122, 136)"/>
+---
+interface Props {
+    contextualProjects?: boolean;
+}
+
+const { contextualProjects = false } = Astro.props;
+---
+
+<a
+    href="/"
+    class="back"
+    title="Go back"
+    data-contextual-projects={contextualProjects ? "true" : undefined}
+>
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.47032 10.5299C6.32987 10.3893 6.25098 10.1987 6.25098 9.99991C6.25098 9.80116 6.32987 9.61054 6.47032 9.46991L10.7203 5.21991C10.789 5.14622 10.8718 5.08712 10.9638 5.04613C11.0558 5.00514 11.1551 4.98309 11.2558 4.98132C11.3565 4.97954 11.4565 4.99807 11.5499 5.03579C11.6433 5.07351 11.7281 5.12965 11.7994 5.20087C11.8706 5.27209 11.9267 5.35692 11.9644 5.45031C12.0022 5.5437 12.0207 5.64373 12.0189 5.74443C12.0171 5.84513 11.9951 5.94445 11.9541 6.03645C11.9131 6.12845 11.854 6.21125 11.7803 6.27991L8.06032 9.99991L11.7803 13.7199C11.9128 13.8621 11.9849 14.0501 11.9815 14.2444C11.9781 14.4387 11.8994 14.6241 11.7619 14.7615C11.6245 14.8989 11.4391 14.9777 11.2448 14.9811C11.0505 14.9845 10.8625 14.9124 10.7203 14.7799L6.47032 10.5299Z" fill="rgb(147, 161, 172)"/>
     </svg>
-    <span> Homepage </span>
+    <span>Go Back</span>
 </a>
+
+<script>
+  const updateContextualProjectBackLinks = () => {
+    const cameFromProjects = new URL(window.location.href).searchParams.get("from") === "projects";
+
+    document
+      .querySelectorAll<HTMLAnchorElement>('[data-contextual-projects="true"]')
+      .forEach((link) => {
+        const label = link.querySelector("span");
+        link.href = cameFromProjects ? "/projects" : "/";
+        link.title = cameFromProjects ? "Back to all works" : "Back to homepage";
+
+      });
+  };
+
+  document.addEventListener("astro:page-load", updateContextualProjectBackLinks);
+  updateContextualProjectBackLinks();
+</script>
 
 <style>
   .back {
@@ -21,7 +52,7 @@
     }
 
     span {
-      font: 300 0.7rem/1.65 "Inter", sans-serif;
+      font: 300 0.8rem/1.65 "Inter", sans-serif;
       color: #000;
       line-height: 1;
       display: inline-block;

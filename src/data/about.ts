@@ -15,12 +15,12 @@ export const about = [
     timestamp: "2025 - 2026",
     company: "Layers AI Inc.",
     name: "layers",
-    icon: "sic-logo.png",
+    icon: "layers.svg",
     role: "FullStack Developer & Designer",
     description: [
-      'Designed and built the payment backend on a new provider, handling transaction reconciliation and integration logic, and migrating from the legacy system without service disruption',
-      'Automated end-to-end delivery of webinar recordings to the learning platform, handling upload to AWS for CDN distribution through publishing on WordPress and eliminating a manual process that took roughly 4 hours per session',
-      'Modernized the web platforms by rebuilding legacy UI and streamlining the WordPress codebase removing a large number of redundant plugins in favor of custom functionality and cutting page load times by roughly half'
+      'Shaped an early-stage idea into a clearly defined consumer mobile product, establishing its core experience, user flows, and feature priorities',
+      'Designed and integrated AI-powered capabilities into the core product experience, turning complex AI interactions into intuitive, accessible features for everyday users',
+      'Delivered the mobile app to production by managing app store deployment, release preparation, versioning, and ongoing updates while maintaining a polished, consistent user experience'
     ],
   },
   {
@@ -37,7 +37,7 @@ export const about = [
   },
   {
     timestamp: "2022 - 2024",
-    company: "Avazoo Holdings",
+    company: "Avazoo Holdings LTD.",
     name: "avazoo",
     icon: "avazoo-logo.png",
     role: "UI Designer & Full-stack Developer",

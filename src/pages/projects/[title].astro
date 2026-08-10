@@ -20,12 +20,12 @@ const { title, desc, technologies, screenshots, pageWidth, width, url, urlText }
 
 ---
 
-<Layout title={`${title.charAt(0).toUpperCase()}${title.slice(1)} - Roy Jose Buhay`}>
+<Layout title={`${title.charAt(0).toUpperCase()}${title.slice(1)} - Roy Buhay`}>
    <main>
      <div class="container">
         <div class="content">          
           <div>
-            <Close />
+            <Close contextualProjects />
             <Image class="logo" src={`/images/${title}/${title}-logo.png`} style={{width: `${width}rem`}} alt={title} width={26} height={26} />
             <p class="desc">{desc}</p>
             <div class="tech">
@@ -36,32 +36,31 @@ const { title, desc, technologies, screenshots, pageWidth, width, url, urlText }
                 </span>
               ))}
             </div>
-            {url && <a class="link" href={url} target="_blank">
+            <!-- {url && <a class="link" href={url} target="_blank">
               View    
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M3.39961 12.598C3.30584 12.5042 3.25316 12.377 3.25316 12.2444C3.25316 12.1118 3.30584 11.9846 3.39961 11.8908L11.0314 4.25904L5.16737 4.25904C5.03629 4.25676 4.91135 4.20309 4.81945 4.10958C4.72756 4.01608 4.67606 3.89022 4.67606 3.75912C4.67606 3.62801 4.72756 3.50216 4.81945 3.40865C4.91135 3.31514 5.03629 3.26147 5.16737 3.25919L12.2384 3.25919C12.371 3.25921 12.4982 3.31189 12.5919 3.40564C12.6857 3.49939 12.7383 3.62654 12.7384 3.75912L12.7384 10.8302C12.7395 10.8966 12.7274 10.9625 12.7028 11.0242C12.6782 11.0858 12.6416 11.142 12.5951 11.1893C12.5485 11.2367 12.493 11.2743 12.4318 11.3C12.3706 11.3257 12.3048 11.3389 12.2384 11.3389C12.172 11.3389 12.1063 11.3257 12.0451 11.3C11.9839 11.2743 11.9284 11.2367 11.8818 11.1893C11.8353 11.142 11.7987 11.0858 11.774 11.0242C11.7494 10.9625 11.7374 10.8966 11.7385 10.8302L11.7385 4.96615L4.10671 12.598C4.01295 12.6917 3.88577 12.7444 3.75316 12.7444C3.62055 12.7444 3.49338 12.6917 3.39961 12.598Z" fill="#A1B1BF"/>
               </svg>
-            </a>}
+            </a>} -->
           </div>
         </div>
-        <div class="screenshots splide" aria-label="Screenshots">
-          <div class="splide__track">
-            <div class="splide__list">
-              {screenshots.map(screen => (
-                <div class="splide__slide">
-                  <Image 
-                    class="screenshots__img" 
-                    src={`/images/${title}/${screen.path}`} 
-                    alt={title} 
-                    width={300} 
-                    height={500}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+        <div class="screenshots" aria-label="Screenshots">
+          {screenshots.map((screen, index) => (
+            <figure
+              class="screenshots__item"
+              style={`--screenshot-index: ${index}`}
+            >
+              <Image
+                class="screenshots__img"
+                src={`/images/${title}/${screen.path}`}
+                alt={`${title} screenshot ${index + 1}`}
+                width={600}
+                height={1200}
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+          ))}
         </div>
      </div>
    </main>
@@ -79,9 +78,8 @@ const { title, desc, technologies, screenshots, pageWidth, width, url, urlText }
 
     @media screen and (min-width: 900px) {
       & {
-        max-width: 60rem;
+        max-width: 64rem;
         padding-inline: 2rem;
-        height: 90%;
       }
     }
   }
@@ -91,42 +89,26 @@ const { title, desc, technologies, screenshots, pageWidth, width, url, urlText }
     align-items: center;
     justify-items: center;
     flex-direction: column;
-        
-    @media screen and (min-width: 900px) {
-        & {
-            flex-direction: row;
-            height: 100%;
-        }
-    }
   }
 
   .logo {
     width: 8rem;
     height: auto;
     margin-top: 2rem;
+    box-shadow: 0 1px 5px 0 #ededed;
+    border-radius: 18px;
   }
 
-  .desc {
-    color: #9b9b9b;
-    line-height: 1.8;
-  }
 
   .content {
     width: 100%;
+    max-width: 37rem;
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    margin-bottom: 2rem;
-            
-    @media screen and (min-width: 900px) {
-        & {
-          width: 35%;
-          height: 100%;
-          padding-right: 2rem;
-        }
-    }
+    margin: 9rem auto 2rem;
   }
 
   .tech {
@@ -148,9 +130,10 @@ const { title, desc, technologies, screenshots, pageWidth, width, url, urlText }
       display: flex;
       align-items: center;
       column-gap: 0.4rem;
-      font: 300 0.7rem/1.65 "JetBrains Mono", monospace;
-      color: #000;
+      font: 300 0.85rem/1.65 "Inter",monospace;
+      color: #4c4c4c;
       text-transform: capitalize;
+      letter-spacing: 0.1px;
 
       @media screen and (min-width: 900px) {
           & {
@@ -162,62 +145,82 @@ const { title, desc, technologies, screenshots, pageWidth, width, url, urlText }
 
   .link {
     display: inline-flex;
-    column-gap: 0.2rem;
     margin-top: 2rem;
-    font: 300 0.7rem/1.65 "Inter", sans-serif;
-    color: #000;
-    line-height: 1;
+    font: 400 0.85rem/2 "Inter",sans-serif;
+    color: #353535;
+    letter-spacing: 0px;
+    text-decoration: none;
+
+    svg {
+      position: relative;
+      top: 8px;
+      left: 3px;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: 2px;
+        left: 0px;
+        right: 0px;
+        border-bottom: 1px solid #d4d4d4;
+    }
   }
 
   .screenshots {
-    flex: 1;
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: start;
     gap: 1rem;
-    height: 100%;
-    overflow: auto;
+    width: 100%;
+    max-width: 60rem;
+    margin-inline: auto;
+    margin-top: 5rem;
+
+    @media screen and (min-width: 550px) {
+      & {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media screen and (min-width: 900px) {
+      & {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    &__item {
+      min-width: 0;
+      margin: 0;
+      border-radius: 0.8rem;
+      overflow: hidden;
+      background: #eef0f0;
+      animation: screenshotFadeInUp 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-delay: calc(120ms + (var(--screenshot-index) * 90ms));
+    }
 
     &__img {
-      width: auto;
-      height: 26rem;
-      border-radius: 0.8rem;
-      margin-right: 1rem;
-
-      @media screen and (min-width: 900px) {
-          & {
-            height: 35rem;
-            margin-right: 0;
-          }
-      }
+      display: block;
+      width: 100%;
+      height: auto;
     }
   }
 
-  .splide__list {
-    @media screen and (min-width: 900px) {
-      & {
-        gap: 1rem;
-      }
+  @keyframes screenshotFadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .screenshots__item {
+      animation: none;
     }
   }
 </style>
-
-<script>
-  import "@splidejs/splide/css";
-  import Splide from "@splidejs/splide";
-
-  function initializeCarousel() {
-    const carousel = document.querySelector<HTMLElement>('.splide');
-
-    if (!carousel || carousel.classList.contains('is-initialized')) return;
-
-    new Splide(carousel, {
-      type: "slide",
-      arrows: false,
-      pagination: false,
-      autoWidth: true,
-    }).mount();
-  }
-
-  document.addEventListener('astro:page-load', initializeCarousel);
-
-</script>

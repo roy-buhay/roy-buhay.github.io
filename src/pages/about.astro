@@ -124,14 +124,14 @@ type About = (typeof about)[number];
         }
 
         &__date {
+            display: block;
             color: #9b9b9b;
             font-size: 75%;
-            order: 2;
-            margin-top: 1rem;
+            margin-top: 0.2rem;
+            font-family: Inter;
 
             @media screen and (min-width: 550px) {
                 & {
-                    color: #9b9b9b;
                     order: 1;
                     width: 20%;
                     margin-top: 0.2rem;
@@ -150,23 +150,25 @@ type About = (typeof about)[number];
         }
 
         &__title {
-            font-size: 0.75rem;
-            font-weight: 300;
             margin: 0;
-            color: #9b9b9b;
+            color: #000;
+            font: 300 0.85rem/1.7 "Inter",sans-serif;
+            text-transform: capitalize;
         }
 
         &__roles {
-            color: #9b9b9b;
+            color: #666;
             margin-top: 0.3rem;
             margin-bottom: 1rem;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             font-weight: 300;
         }
 
         &__desc {
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             margin-bottom: 0.3rem;
+            line-height: 1.5;
+            letter-spacing: 0.1px;
 
             &:before {
                 content: "•";

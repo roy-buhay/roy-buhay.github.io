@@ -44,10 +44,6 @@ const { title } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
-      rel="stylesheet"
-    />
   </head>
   <body>
     <div class="ambient-sphere" aria-hidden="true">
@@ -190,7 +186,15 @@ const { title } = Astro.props;
         frame = requestAnimationFrame(render);
       };
 
+      const disableImageDragging = () => {
+        document.querySelectorAll<HTMLImageElement>("img").forEach((image) => {
+          image.draggable = false;
+        });
+      };
+
       document.addEventListener("astro:page-load", setupAmbientSphere);
+      document.addEventListener("astro:page-load", disableImageDragging);
+      disableImageDragging();
     </script>
 
     <style lang="scss" is:global>
@@ -349,6 +353,9 @@ const { title } = Astro.props;
       picture {
         max-width: 100%;
         display: block;
+        -webkit-user-drag: none;
+        user-select: none;
+        -webkit-user-select: none;
       }
 
       input,
@@ -600,10 +607,8 @@ const { title } = Astro.props;
       }
 
       footer {
-        font:
-          300 0.65rem/1.65 "JetBrains Mono",
-          monospace;
-        color: rgb(65, 85, 102);
+        font: 300 0.7rem/1.7 "Inter",sans-serif;
+        color: rgb(169, 169, 169);
         text-align: center;
         margin-bottom: 2rem;
         position: relative;
