@@ -17,14 +17,14 @@ const visibleProjects = typeof limit === "number" ? projects.slice(0, limit) : p
             <a
                 href={`/projects/${project.title}${from === "projects" ? "?from=projects" : ""}`}
                 class="projects__link"
-                aria-label={`View ${project.title} project`}
+                aria-label={`View ${project.app} project`}
             >
                 <span class="projects__screens">
                     {project.screens.slice(0, 2).map((screen, index) => (
                         <Image
                             class="projects__screens_img"
                             src={`/images/${project.title}/${screen.path}`}
-                            alt={`${project.title} screen ${index + 1}`}
+                            alt={`${project.app} screen ${index + 1}`}
                             width={280}
                             height={560}
                             loading="lazy"

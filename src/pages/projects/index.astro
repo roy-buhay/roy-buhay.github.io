@@ -11,10 +11,13 @@ const iconOverrides: Record<string, string> = {
 };
 ---
 
-<Layout title="All Works - Roy Jose Buhay">
+<Layout
+    title="Mobile & Web Projects | Roy Jose Buhay"
+    description="Explore mobile and web products designed and developed by Roy Jose Buhay using React Native, Expo, TypeScript, Node.js, and modern UI/UX practices."
+>
     <main>
         <Close />
-        <h2>All Works</h2>
+        <h1>All Works</h1>
         <ul class="works">
             {
                 projects.map((project, index) => {
@@ -31,7 +34,7 @@ const iconOverrides: Record<string, string> = {
                         <a
                             class="works__link"
                             href={`/projects/${project.title}?from=projects`}
-                            aria-label={`View ${project.title} project`}
+                            aria-label={`View ${project.app} project`}
                             data-preview-id={`work-preview-${index}`}
                         >
                             <Image
@@ -44,7 +47,7 @@ const iconOverrides: Record<string, string> = {
                                 decoding="async"
                             />
                             <span class="works__content">
-                                <span class="works__title">{project.title}</span>
+                                <span class="works__title">{project.app}</span>
                                 <span class="works__description">{project.short_desc}</span>
                             </span>
                             <svg
@@ -96,9 +99,10 @@ const iconOverrides: Record<string, string> = {
         max-width: 37rem;
         margin: 2rem auto 4rem;
 
-        h2 {
+        h1 {
             margin-top: 2rem;
             margin-bottom: 1.5rem;
+            font-size: 1.5rem;
         }
     }
 
@@ -109,7 +113,7 @@ const iconOverrides: Record<string, string> = {
         list-style: none;
 
         &__item {
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #f0f0f0;
             animation: workFadeInUp 600ms cubic-bezier(0.22, 1, 0.36, 1) both;
             animation-delay: calc(120ms + (var(--work-index) * 70ms));
         }
@@ -159,6 +163,7 @@ const iconOverrides: Record<string, string> = {
         &__title {
             color: #000;
             font: 300 0.85rem/1.7 "Inter",sans-serif;
+            text-transform: capitalize;
         }
 
         &__description {

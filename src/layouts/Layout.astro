@@ -5,39 +5,94 @@ import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   title: string;
+  description: string;
+  image?: string;
+  type?: "website" | "article";
+  structuredData?: Record<string, unknown>;
 }
-const { title } = Astro.props;
+
+const {
+  title,
+  description,
+  image = "/images/meta-cover.jpg",
+  type = "website",
+  structuredData,
+} = Astro.props;
+
+const siteUrl = Astro.site ?? new URL("https://roy-buhay.github.io");
+const canonicalPath =
+  Astro.url.pathname === "/"
+    ? "/"
+    : `${Astro.url.pathname.replace(/\/$/, "")}/`;
+const canonicalUrl = new URL(canonicalPath, siteUrl);
+const socialImageUrl = new URL(image, siteUrl);
+const personId = new URL("/#person", siteUrl).href;
+const websiteId = new URL("/#website", siteUrl).href;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": personId,
+      name: "Roy Jose Buhay",
+      url: new URL("/", siteUrl).href,
+      jobTitle: "Design Engineer and Full-Stack Developer",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Cebu City",
+        addressCountry: "PH",
+      },
+      sameAs: ["https://www.linkedin.com/in/roy-buhay/"],
+    },
+    {
+      "@type": "WebSite",
+      "@id": websiteId,
+      name: "Roy Jose Buhay",
+      url: new URL("/", siteUrl).href,
+      publisher: { "@id": personId },
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${canonicalUrl.href}#webpage`,
+      url: canonicalUrl.href,
+      name: title,
+      description,
+      isPartOf: { "@id": websiteId },
+      about: { "@id": personId },
+    },
+    ...(structuredData ? [structuredData] : []),
+  ],
+};
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalUrl} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <ViewTransitions />
 
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Roy Jose Buhay - Software Developer" />
-    <meta
-      property="og:description"
-      content="Software Developer | React | Next.js | React Native | Expo | TypeScript | Node.js | UI"
-    />
-    <meta property="og:image" content="/images/meta-cover.jpg" />
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="Roy Jose Buhay" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:alt" content="Roy Jose Buhay portfolio preview" />
 
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta
-      property="twitter:title"
-      content="Roy Jose Buhay - Software Developer"
-    />
-    <meta
-      property="twitter:description"
-      content="Software Developer | React | Next.js | React Native | Expo | TypeScript | Node.js | UI"
-    />
-    <meta property="twitter:image" content="/images/meta-cover.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageUrl} />
+    <meta name="twitter:image:alt" content="Roy Jose Buhay portfolio preview" />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -104,6 +159,7 @@ const { title } = Astro.props;
         </filter>
       </defs>
     </svg>
+    <!-- <Header /> -->
     <slot />
     <Footer />
 
@@ -608,7 +664,7 @@ const { title } = Astro.props;
 
       footer {
         font: 300 0.7rem/1.7 "Inter",sans-serif;
-        color: rgb(169, 169, 169);
+        color: rgb(110, 110, 110);
         text-align: center;
         margin-bottom: 2rem;
         position: relative;

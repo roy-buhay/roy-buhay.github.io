@@ -7,10 +7,13 @@ import { about } from "@data/about";
 type About = (typeof about)[number];
 ---
 
-<Layout title="Work History">
+<Layout
+    title="Work Experience | Roy Jose Buhay"
+    description="Explore Roy Jose Buhay's experience designing and building production web and mobile products for international teams and users."
+>
     <main>
         <Close />
-        <h2>Work History</h2>
+        <h1>Work History</h1>
         <div class="about">
         {
                 about.map((data: About) => (
@@ -50,9 +53,10 @@ type About = (typeof about)[number];
             }
         }
 
-        h2 {
+        h1 {
             margin-top: 2rem;
             margin-bottom: 2rem;
+            font-size: 1.5rem;
         }
     }
 
@@ -125,8 +129,8 @@ type About = (typeof about)[number];
 
         &__date {
             display: block;
-            color: #9b9b9b;
-            font-size: 75%;
+            color: #6c6c6c;
+            font-size: 70%;
             margin-top: 0.2rem;
             font-family: Inter;
 

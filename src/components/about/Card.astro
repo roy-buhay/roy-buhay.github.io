@@ -11,7 +11,7 @@ type About = (typeof about)[number];
         {
             about.slice(0, 3).map((data: About) => (
                 <article class="about__experiences">
-                    <Image class="about__img" src={`/images/${data.icon}`} alt={data.company} width={32} height={32} />
+                    <Image class="about__img" src={`/images/${data.icon}`} alt={data.company} width={26} height={26} />
                     <span class="about__company">
                         <p class="about__title"> {data.company} </p>
                         <small class="about__date">{data.timestamp}</small>

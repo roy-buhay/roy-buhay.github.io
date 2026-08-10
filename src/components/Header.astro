@@ -1,15 +1,48 @@
+---
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "Experience" },
+    { href: "/projects", label: "Projects" },
+    { href: "/contact", label: "Contact" },
+];
+
+const isCurrent = (href: string) =>
+    href === "/" ? currentPath === href : currentPath.startsWith(href);
+---
+
 <header>
-    <a href="/"> Home </a>
-    <a href="/roy-buhay-resume.pdf" target="_blank"> Resume </a>
-    <a href="/contact"> Contact </a>
+    <nav aria-label="Primary navigation">
+        {navItems.map(({ href, label }) => (
+            <a href={href} aria-current={isCurrent(href) ? "page" : undefined}>
+                {label}
+            </a>
+        ))}
+        <a href="/CV-Roy-Jose-Buhay.pdf" target="_blank" rel="noopener noreferrer">
+            Resume
+        </a>
+    </nav>
 </header>
 
 <style lang="scss"> 
     header {
+        width: 100%;
+        max-width: 64rem;
+        margin: 0 auto;
+        padding: 0 1rem;
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+        }
+
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        gap: 1.4rem;
 
         a {
             display: inline-block;
@@ -17,6 +50,11 @@
             font: 300 0.7rem/1.6 "Inter", sans-serif;
             color: #000;
             text-decoration: none;
+
+            &[aria-current="page"] {
+                text-decoration: underline;
+                text-underline-offset: 0.25rem;
+            }
         }
     }
 </style>
