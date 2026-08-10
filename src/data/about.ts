@@ -18,9 +18,9 @@ export const about = [
     icon: "layers.svg",
     role: "FullStack Developer & Designer",
     description: [
-      'Shaped an early-stage idea into a clearly defined consumer mobile product, establishing its core experience, user flows, and feature priorities',
-      'Designed and integrated AI-powered capabilities into the core product experience, turning complex AI interactions into intuitive, accessible features for everyday users',
-      'Delivered the mobile app to production by managing app store deployment, release preparation, versioning, and ongoing updates while maintaining a polished, consistent user experience'
+      'Turned an early-stage concept into a production-ready consumer mobile app, defining its core journeys, feature priorities, and UI/UX from the ground up',
+      'Integrated AI-powered capabilities into core user journeys, simplifying complex AI interactions into intuitive consumer-facing experiences',
+      'Launched the app on mobile app stores, owning release preparation, versioning, store submissions, and ongoing production updates'
     ],
   },
   {
