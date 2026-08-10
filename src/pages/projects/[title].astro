@@ -107,7 +107,7 @@ const projectSchema = {
             <Close contextualProjects />
             <Image class="logo" src={`/images/${title}/${icon}`} style={{width: `${width}rem`}} alt={`${projectName} logo`} width={26} height={26} />
             <h1>{projectName}</h1>
-            {projectSummary && <p class="desc">{projectSummary}</p>}
+            <!-- {projectSummary && <p class="desc">{projectSummary}</p>} -->
             <div class="tech">
               {technologies.map(tech => (
                 <span class="tech__img">
@@ -219,8 +219,8 @@ const projectSchema = {
 
     @media screen and (min-width: 900px) {
         & {
-          column-gap: 1rem;
-          row-gap: 0.6rem;
+          column-gap: 0.4rem;
+          row-gap: 0.5rem;
         }
     }
 
@@ -232,10 +232,14 @@ const projectSchema = {
       color: #4c4c4c;
       text-transform: capitalize;
       letter-spacing: 0.1px;
+      padding: 0.2rem 0.6rem;
+      border-radius: 1rem;
+      background: rgba(253,253,253,0.72);
+      // border: 1px solid rgba(255,255,255,0.72);
 
       @media screen and (min-width: 900px) {
           & {
-            column-gap: 0.5rem;
+            column-gap: 0.3rem;
           }
       }
     }
@@ -246,7 +250,8 @@ const projectSchema = {
 
     h2 {
       margin: 1.8rem 0 0.7rem;
-      font: 400 0.85rem/1.7 "Inter",sans-serif;
+      font: 300 0.9rem/1.7 "Inter",sans-serif;
+      letter-spacing: 0.2px;
     }
 
     li {
