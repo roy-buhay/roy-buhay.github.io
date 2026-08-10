@@ -4,11 +4,6 @@ import Close from "@components/Close.astro";
 import { projects } from "@data/projects";
 import Layout from "@layout/Layout.astro";
 
-const iconOverrides: Record<string, string> = {
-    blush: "/images/blush/blush-logo.png",
-    ubaware: "/images/ubaware/ubaware-logo.png",
-    rocky: "/images/rocky/rocky-logo.webp",
-};
 ---
 
 <Layout
@@ -39,7 +34,7 @@ const iconOverrides: Record<string, string> = {
                         >
                             <Image
                                 class="works__icon"
-                                src={iconOverrides[project.title] ?? `/images/${project.title}/${project.icon}`}
+                                src={`/images/${project.title}/${project.icon}`}
                                 alt=""
                                 width={52}
                                 height={52}

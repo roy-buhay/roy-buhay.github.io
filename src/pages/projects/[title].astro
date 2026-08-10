@@ -8,15 +8,15 @@ import { projects } from "@data/projects";
 type Project = (typeof projects)[number];
 
 export function getStaticPaths() {
-  return projects.map(({ title, app, desc, contribution, highlights, technologies, screenshots, pageWidth, width, url, urlText }: Project) => {
+  return projects.map(({ title, app, desc, contribution, highlights, technologies, screenshots, icon, pageWidth, width, url, urlText }: Project) => {
     return {
       params: { title },
-      props: { title, app, desc, contribution, highlights, technologies, screenshots, pageWidth, width, url, urlText },
+      props: { title, app, desc, contribution, highlights, technologies, screenshots, icon, pageWidth, width, url, urlText },
     };
   });
 }
 
-const { title, app, desc, contribution, highlights, technologies, screenshots, pageWidth, width, url, urlText } = Astro.props;
+const { title, app, desc, contribution, highlights, technologies, screenshots, icon, pageWidth, width, url, urlText } = Astro.props;
 
 const technologyNames: Record<string, string> = {
   react: "React",
@@ -29,10 +29,9 @@ const technologyNames: Record<string, string> = {
   figma: "Figma",
   supabase: "Supabase",
   elevenlabs: "ElevenLabs",
-  reactnativetestinglibrary: "React Native Testing Library",
+  reactnativetestinglibrary: "RNTL",
   maestro: "Maestro",
   claudecode: "Claude Code",
-  image2: "Image2",
   zustand: "Zustand",
   mmkv: "MMKV",
   postgres: "PostgreSQL",
@@ -45,20 +44,19 @@ const technologyNames: Record<string, string> = {
 };
 
 const technologyIcons: Record<string, string> = {
-  elevenlabs: "react",
-  reactnativetestinglibrary: "react",
-  maestro: "react",
-  claudecode: "react",
-  image2: "react",
-  zustand: "react",
-  mmkv: "react",
-  postgres: "react",
-  mapsplacesapi: "react",
-  openaiwhisper: "react",
-  reactnativegiftedcharts: "react",
-  openai: "react",
-  reactquery: "react",
-  nodeexpress: "node",
+  elevenlabs: "/images/tech/elevenlabs.svg",
+  reactnativetestinglibrary: "/images/tech/rntl.svg",
+  maestro: "/images/tech/maestro.svg",
+  openaiwhisper: "/images/tech/openAI.svg",
+  openai: "/images/tech/openAI.svg",
+  zustand: "/images/tech/zustand.svg",
+  claudecode: "/svg/react.svg",
+  mmkv: "/images/tech/mmkv.svg",
+  postgres: "/svg/react.svg",
+  mapsplacesapi: "/svg/react.svg",
+  reactnativegiftedcharts: "/svg/react.svg",
+  reactquery: "/svg/react.svg",
+  nodeexpress: "/svg/node.svg",
 };
 
 const projectName = app;
@@ -107,13 +105,13 @@ const projectSchema = {
         <div class="content">          
           <div>
             <Close contextualProjects />
-            <Image class="logo" src={`/images/${title}/${title}-logo.png`} style={{width: `${width}rem`}} alt={`${projectName} logo`} width={26} height={26} />
+            <Image class="logo" src={`/images/${title}/${icon}`} style={{width: `${width}rem`}} alt={`${projectName} logo`} width={26} height={26} />
             <h1>{projectName}</h1>
             {projectSummary && <p class="desc">{projectSummary}</p>}
             <div class="tech">
               {technologies.map(tech => (
                 <span class="tech__img">
-                  <Image src={`/svg/${technologyIcons[tech] ?? tech}.svg`} alt="" width={26} height={26} />
+                  <Image src={technologyIcons[tech] ?? `/svg/${tech}.svg`} alt="" width={26} height={26} />
                   <span>{technologyNames[tech] ?? tech}</span>
                 </span>
               ))}
@@ -244,7 +242,7 @@ const projectSchema = {
   }
 
   .case-study {
-    margin: 2.5rem 0 0;
+    margin: 3.5rem 0 0;
 
     h2 {
       margin: 1.8rem 0 0.7rem;
