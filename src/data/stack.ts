@@ -8,8 +8,8 @@ export const stacks = [
     'expo',
     'tailwind',
     'nextjs',
-    'aws',
-    'node',
+    'supabase',
     'express',
-    'supabase'
+    'node',
+    'aws',
 ]
