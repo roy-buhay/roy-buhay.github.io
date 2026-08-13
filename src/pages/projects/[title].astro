@@ -91,6 +91,139 @@ const projectSchema = {
   creator: { "@id": new URL("/#person", siteUrl).href },
 };
 
+type ProjectDetailCell =
+  | { type: "image"; path: string; alt: string; class?: string }
+  | { type: "text"; body: string }
+  | { type: "media-text"; path: string; alt: string; body: string; class?: string }
+  | { type: "empty" };
+
+// Custom bottom rows can mix images, copy, and empty cells without changing
+// the existing project data or screenshot gallery.
+const customProjectDetails: Record<string, ProjectDetailCell[][]> = {
+  blush: [
+    [
+      {
+        type: "image",
+        path: "blush_1.webp",
+        alt: "Blush home screen with featured and trending audio stories",
+      },
+      {
+        type: "image",
+        path: "blush_4.webp",
+        alt: "Blush discover screen with ranked and categorized stories",
+        class: "discover",
+      },
+      {
+        type: "media-text",
+        path: "cards.webp",
+        alt: "Blush ranked story cards and play counts",
+        class: "cards",
+        body: "I built reusable React Native components for story cards, content rails, filters, and navigation, maintaining consistent layouts and visual hierarchy across screen sizes.",
+      },
+    ],
+    [
+      {
+        type: "image",
+        path: "blush_2.webp",
+        alt: "Blush full audio player for an active story chapter",
+      },
+      {
+        type: "image",
+        path: "blush_3.webp",
+        alt: "Blush playback controls and persistent mini-player states",
+      },
+      {
+        type: "media-text",
+        path: "player.webp",
+        alt: "Blush ranked story cards and play counts",
+        class: "cards2",
+        body: "I used Zustand to synchronize the story page, full player, mini-player, and reading/listening progress, with MMKV restoring the listener’s session after relaunch.",
+      },
+    ],
+    [
+      {
+        type: "image",
+        path: "blush_5.webp",
+        alt: "Blush Midnight Reader badge unlocked screen",
+      },
+      {
+        type: "image",
+        path: "blush_6.webp",
+        alt: "Blush three-day listening streak screen",
+        class: "streak",
+      },
+      {
+        type: "media-text",
+        path: "badges.webp",
+        alt: "Blush ranked story cards and play counts",
+        class: "cards3",
+        body: "I built reusable badge and streak states with consistent presentation, reward logic, and a clear return to the listening experience.",
+      },
+    ],
+  ],
+  ubaware: [
+    [
+      {
+        type: "image",
+        path: "ubaware_0.webp",
+        alt: "UBAware onboarding screen introducing location-aware discovery",
+      },
+      {
+        type: "image",
+        path: "ubaware_1.webp",
+        alt: "UBAware map showing nearby places, distances, and active alerts",
+      },
+      {
+        type: "media-text",
+        path: "markers.webp",
+        alt: "Blush ranked story cards and play counts",
+        class: "markers",
+        body: "I built reusable map markers, nearby-place cards, distance indicators, and navigation states around the user's current location.",
+      },
+    ],
+    [
+      {
+        type: "image",
+        path: "ubaware_2.webp",
+        alt: "UBAware place panel with travel time, distance, and route options",
+      },
+      {
+        type: "image",
+        path: "ubaware_3.webp",
+        alt: "UBAware active event details for a nearby venue",
+      },
+      {
+        type: "media-text",
+        path: "panels.webp",
+        alt: "Blush ranked story cards and play counts",
+        class: "panels",
+        body: "I connected place details, route options, ratings, and active events into contextual panels that preserve the map behind each interaction.",
+      },
+    ],
+    [
+      {
+        type: "image",
+        path: "ubaware_4.webp",
+        alt: "UBAware grid of local events happening this week",
+      },
+      {
+        type: "image",
+        path: "ubaware_5.webp",
+        alt: "UBAware profile with preferences and map theme controls",
+      },
+      {
+        type: "media-text",
+        path: "events.webp",
+        alt: "Blush ranked story cards and play counts",
+        class: "panels",
+        body: "I built reusable event cards and preference states so users can browse nearby activity and control how location-based information is presented.",
+      },
+    ],
+  ],
+};
+
+const projectDetailRows = customProjectDetails[title] ?? [];
+
 ---
 
 <Layout
@@ -132,27 +265,81 @@ const projectSchema = {
             </a>}
           </div>
         </div>
-        <div class="screenshots" aria-label="Screenshots">
-          {screenshots.map((screen, index) => (
-            <figure
-              class:list={[
-                "screenshots__item",
-                `screenshots__item--${screen.class}`,
-              ]}
-              style={`--screenshot-index: ${index}`}
-            >
-              <Image
-                class="screenshots__img"
-                src={`/images/${title}/${screen.path}`}
-                alt={`${projectName} product screen ${index + 1}`}
-                width={600}
-                height={1200}
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-          ))}
-        </div>
+        {projectDetailRows.length === 0 && (
+          <div class="screenshots stagger-section stagger-section--2" aria-label="Screenshots">
+            {screenshots.map((screen, index) => (
+              <figure
+                class:list={[
+                  "screenshots__item",
+                  `screenshots__item--${screen.class}`,
+                ]}
+                style={`--screenshot-index: ${index}`}
+              >
+                <Image
+                  class="screenshots__img"
+                  src={`/images/${title}/${screen.path}`}
+                  alt={`${projectName} product screen ${index + 1}`}
+                  width={600}
+                  height={1200}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            ))}
+          </div>
+        )}
+        {projectDetailRows.length > 0 && (
+          <section class="custom-details" aria-label={`${projectName} design and implementation details`}>
+            {projectDetailRows.map((row, rowIndex) => (
+              <div
+                class:list={[
+                  "custom-details__row",
+                  "stagger-section",
+                  `stagger-section--${rowIndex + 2}`,
+                ]}
+              >
+                {row.map((cell) => (
+                  <div
+                    class:list={["custom-details__cell", `custom-details__cell--${cell.type}`]}
+                  >
+                    {cell.type === "image" && (
+                      <Image
+                        class:list={[
+                          "custom-details__img",
+                          cell.class && `custom-details__img--${cell.class}`,
+                        ]}
+                        src={`/images/${title}/${cell.path}`}
+                        alt={cell.alt}
+                        width={600}
+                        height={1200}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    )}
+                    {cell.type === "media-text" && (
+                      <>
+                        <Image
+                          class:list={[
+                            "custom-details__img",
+                            cell.class && `custom-details__img--${cell.class}`,
+                          ]}
+                          src={`/images/${title}/${cell.path}`}
+                          alt={cell.alt}
+                          width={600}
+                          height={1200}
+                          loading="lazy"
+                          decoding="async"
+                        />
+                        <p>{cell.body}</p>
+                      </>
+                    )}
+                    {cell.type === "text" && <p>{cell.body}</p>}
+                  </div>
+                ))}
+              </div>
+            ))}
+          </section>
+        )}
      </div>
    </main>
 </Layout>
@@ -180,6 +367,7 @@ const projectSchema = {
     align-items: center;
     justify-items: center;
     flex-direction: column;
+    animation: none;
   }
 
   .logo {
@@ -325,9 +513,6 @@ const projectSchema = {
       margin: 0;
       border-radius: 0.8rem;
       overflow: hidden;
-      background: #eef0f0;
-      animation: screenshotFadeInUp 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
-      animation-delay: calc(120ms + (var(--screenshot-index) * 90ms));
     }
 
     &__item--desktop {
@@ -343,7 +528,138 @@ const projectSchema = {
     }
   }
 
-  @keyframes screenshotFadeInUp {
+  .custom-details {
+    width: 100%;
+    max-width: 60rem;
+    margin: 8rem auto 3rem;
+
+    &__row {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: end;
+      gap: 1.2rem;
+
+      & + & {
+        margin-top: 3rem;
+      }
+
+      @media screen and (min-width: 550px) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    &__cell {
+      min-width: 0;
+    }
+
+    &__cell--image {
+      overflow: visible;
+    }
+
+    &__cell--text,
+    &__cell--media-text {
+      padding: 0.25rem 0 0.75rem 2rem;
+
+      p {
+        max-width: 17rem;
+        margin: 0 0 3rem 0;
+        color: #4d4d4d;
+        font: 300 0.85rem/1.6 "Inter", sans-serif;
+      }
+    }
+
+    &__img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 0.8rem;
+    }
+
+    // &__img--player {
+    //   position: relative;
+    //   z-index: 2;
+    //   left: 0;
+    //   top: 0;
+    //   width: calc(100%);
+    //   height: auto;
+    //   max-width: none;
+    //   border-radius: 0;
+    //   object-fit: contain;
+    // }
+
+    &__img--discover {
+      // top: 6rem;
+      position: relative;
+    }
+
+    &__img--streak {
+      position: relative;
+      // top: -3.5rem;
+    }
+
+    &__img--cards {
+      margin-bottom: 1.5rem;
+      border-radius: 0;
+    }
+
+    &__img--cards2 {
+      margin-bottom: 1.5rem;
+      border-radius: 0;
+      width: 22rem;
+      max-width: unset;
+      left: -1.5rem;
+      position: relative;
+    }
+
+    &__img--cards3 {
+      margin-bottom: 1rem;
+      border-radius: 0;
+      width: 18rem;
+      max-width: unset;
+    }
+
+    &__img--markers {
+      max-width: unset;
+      width: 19rem;
+      position: relative;
+      left: -2rem;
+    }
+
+    &__img--panels {
+      max-width: unset;
+      width: 19rem;
+      position: relative;
+      left: -1rem;
+    }
+  }
+
+  .stagger-section {
+    animation: customDetailFadeInUp 600ms cubic-bezier(0.22, 1, 0.36, 1) both;
+
+    &--1 { animation-delay: 80ms; }
+    &--2 { animation-delay: 180ms; }
+    &--3 { animation-delay: 280ms; }
+    &--4 { animation-delay: 380ms; }
+    &--5 { animation-delay: 480ms; }
+  }
+
+  .content > div > :global(.back),
+  .content > div > .logo,
+  .content > div > h1,
+  .content > div > .tech,
+  .content > div > .case-study,
+  .content > div > .link {
+    animation: customDetailFadeInUp 600ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .content > div > :global(.back) { animation-delay: 80ms; }
+  .content > div > .logo { animation-delay: 180ms; }
+  .content > div > h1 { animation-delay: 280ms; }
+  .content > div > .tech { animation-delay: 380ms; }
+  .content > div > .case-study { animation-delay: 480ms; }
+  .content > div > .link { animation-delay: 580ms; }
+
+  @keyframes customDetailFadeInUp {
     from {
       opacity: 0;
       transform: translateY(20px);
@@ -356,8 +672,16 @@ const projectSchema = {
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .screenshots__item {
+    .stagger-section,
+    .content > div > :global(.back),
+    .content > div > .logo,
+    .content > div > h1,
+    .content > div > .tech,
+    .content > div > .case-study,
+    .content > div > .link {
       animation: none;
+      opacity: 1;
+      transform: none;
     }
   }
 </style>

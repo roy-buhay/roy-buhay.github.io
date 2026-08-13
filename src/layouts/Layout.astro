@@ -101,7 +101,7 @@ const schema = {
     />
   </head>
   <body>
-    <div class="ambient-sphere" aria-hidden="true">
+    <div class="ambient-sphere" aria-hidden="true" hidden>
       <span></span>
       <i class="sphere-fragment sphere-fragment--one"></i>
       <i class="sphere-fragment sphere-fragment--two"></i>
@@ -173,7 +173,7 @@ const schema = {
 
         ambientWindow.__ambientSphereAbort?.abort();
 
-        if (!sphere || motionQuery.matches) return;
+        if (!sphere || sphere.hidden || motionQuery.matches) return;
 
         const controller = new AbortController();
         ambientWindow.__ambientSphereAbort = controller;
