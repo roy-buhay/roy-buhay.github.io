@@ -561,8 +561,8 @@ export const projects = [
     urlText: "",
     width: 3.6,
     pageWidth: 5.5,
-    path: "matchit-logo.png",
-    icon: "matchit-logo.png",
+    path: "avazoo-logo.png",
+    icon: "avazoo-logo.png",
     roles: [
       "UI and interaction design",
       "Library integrations",
