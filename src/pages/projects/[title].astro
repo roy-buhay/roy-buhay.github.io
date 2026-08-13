@@ -135,7 +135,7 @@ const customProjectDetails: Record<string, ProjectDetailCell[][]> = {
       {
         type: "media-text",
         path: "player.webp",
-        alt: "Blush ranked story cards and play counts",
+        alt: "Blush full-player controls and persistent mini-player",
         class: "cards2",
         body: "I used Zustand to synchronize the story page, full player, mini-player, and reading/listening progress, with MMKV restoring the listener’s session after relaunch.",
       },
@@ -155,7 +155,7 @@ const customProjectDetails: Record<string, ProjectDetailCell[][]> = {
       {
         type: "media-text",
         path: "badges.webp",
-        alt: "Blush ranked story cards and play counts",
+        alt: "Blush achievement badge and listening streak states",
         class: "cards3",
         body: "I built reusable badge and streak states with consistent presentation, reward logic, and a clear return to the listening experience.",
       },
@@ -176,7 +176,7 @@ const customProjectDetails: Record<string, ProjectDetailCell[][]> = {
       {
         type: "media-text",
         path: "markers.webp",
-        alt: "Blush ranked story cards and play counts",
+        alt: "UBAware nearby-place cards and branded map markers",
         class: "markers",
         body: "I built reusable map markers, nearby-place cards, distance indicators, and navigation states around the user's current location.",
       },
@@ -195,7 +195,7 @@ const customProjectDetails: Record<string, ProjectDetailCell[][]> = {
       {
         type: "media-text",
         path: "panels.webp",
-        alt: "Blush ranked story cards and play counts",
+        alt: "UBAware active-event rating, route, and travel-mode controls",
         class: "panels",
         body: "I connected place details, route options, ratings, and active events into contextual panels that preserve the map behind each interaction.",
       },
@@ -214,7 +214,7 @@ const customProjectDetails: Record<string, ProjectDetailCell[][]> = {
       {
         type: "media-text",
         path: "events.webp",
-        alt: "Blush ranked story cards and play counts",
+        alt: "UBAware event cards for nearby offers and activities",
         class: "panels",
         body: "I built reusable event cards and preference states so users can browse nearby activity and control how location-based information is presented.",
       },
@@ -565,6 +565,14 @@ const projectDetailRows = customProjectDetails[title] ?? [];
         margin: 0 0 3rem 0;
         color: #4d4d4d;
         font: 300 0.85rem/1.6 "Inter", sans-serif;
+      }
+    }
+
+    &__cell--media-text &__img {
+      display: none;
+
+      @media screen and (min-width: 900px) {
+        display: block;
       }
     }
 
