@@ -5,19 +5,21 @@ import { projects } from "@data/projects";
 interface Props {
     limit?: number;
     from?: "projects";
+    archive?: boolean;
 }
 
-const { limit, from } = Astro.props;
+const { limit, from, archive = false } = Astro.props;
 const visibleProjects = typeof limit === "number" ? projects.slice(0, limit) : projects;
 ---
 
-<div class="projects">
+<div class:list={["projects", { "projects--archive": archive }]}>
     {
-        visibleProjects.map((project) => (
+        visibleProjects.map((project, index) => (
             <a
                 href={`/projects/${project.title}${from === "projects" ? "?from=projects" : ""}`}
                 class="projects__link"
                 aria-label={`View ${project.app} project`}
+                style={archive ? `--project-index: ${index}` : undefined}
             >
                 <span class="projects__screens">
                     {project.screens.slice(0, 2).map((screen, index) => (
@@ -41,7 +43,7 @@ const visibleProjects = typeof limit === "number" ? projects.slice(0, limit) : p
     .projects {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1rem;
+        gap: 4rem;
         width: 100%;
 
         &__link {
@@ -62,6 +64,19 @@ const visibleProjects = typeof limit === "number" ? projects.slice(0, limit) : p
             &:focus-visible {
                 outline: 2px solid #000;
                 outline-offset: 3px;
+            }
+        }
+
+        &--archive {
+            grid-template-columns: 1fr;
+
+            .projects__link {
+                animation: projectFadeInUp 600ms cubic-bezier(0.22, 1, 0.36, 1) both;
+                animation-delay: calc(100ms + (var(--project-index) * 70ms));
+            }
+
+            @media screen and (min-width: 550px) {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
 
@@ -103,6 +118,24 @@ const visibleProjects = typeof limit === "number" ? projects.slice(0, limit) : p
                     transform: translateX(3%) rotate(5deg);
                 }
             }
+        }
+    }
+
+    @keyframes projectFadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(16px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .projects--archive .projects__link {
+            animation: none;
         }
     }
 </style>
