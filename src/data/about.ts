@@ -18,9 +18,12 @@ export const about = [
     icon: "layers.svg",
     role: "FullStack Developer & Designer",
     description: [
-      'Turned an early-stage concept into a production-ready consumer mobile app, defining its core journeys, feature priorities, and UI/UX from the ground up',
-      'Integrated AI-powered capabilities into core user journeys, simplifying complex AI interactions into intuitive consumer-facing experiences',
-      'Launched the app on mobile app stores, owning release preparation, versioning, store submissions, and ongoing production updates'
+      'Led the end-to-end frontend development of consumer mobile apps using React Native and Expo, transforming early-stage concepts into production-ready products defining core journeys, feature priorities, frontend architecture, and UI/UX',
+      'Built scalable application foundations with reusable components, navigation flows, state management, authentication, API integrations, form validation, and consistent loading and error-handling patterns',
+      'Integrated OpenAI Whisper and other models into core mobile journeys, enabling speech transcription, conversational chat, automated triage, and personalized recommendations through intuitive consumer-facing experiences',
+      'Developed dedicated Next.js CMS applications for managing a catalog of almost 10,000 books, user-generated media uploads, and audio content, enabling internal teams to maintain operational content without requiring mobile application releases',
+      'Collaborated with product, design, and backend stakeholders to translate evolving requirements into maintainable technical solutions, balancing delivery speed, user experience, performance, and scalability',
+      'Owned complete mobile release cycle using EAS, including build configuration, environment management, versioning, App Store and Google Play submissions, production updates, and issue resolution',
     ],
   },
   {
@@ -30,9 +33,11 @@ export const about = [
     icon: "g2g-logo.png",
     role: "Front-end Developer & Designer (Part-time)",
     description: [
-      'Delivered a cleaner, more maintainable codebase by re-architecting a poorly-structured app eliminating duplicated components and separating presentational and container components',
-      'Improved app performance by introducing React Query for data fetching and centralizing state with Zustand (persisted via MMKV), removing redundant network calls and fixing inefficient data flows',
-      'Configured Expo EAS for streamlined build, versioning, and over-the-air deployment'
+      'Re-architected an existing React Native and Expo application, consolidating duplicated components and introducing TanStack Query, Zustand, and MMKV persistence to improve maintainability, state management, data fetching, and runtime performance',
+      'Improved UI quality across all screens by implementing design tokens, refining interactions and layouts, standardizing loading, empty, error, and success states, and addressing platform-specific behavior across iOS and Android',
+      'Consolidated duplicated components and separated presentation from application logic, improving reusability, readability, and consistency across the codebase',
+      'Integrated and refined subscription paywalls, connecting purchase journeys and ensuring users received the correct experience based on their access status',
+      'Configured Expo Application Services for builds, version management, and over-the-air updates, creating a more reliable workflow for testing and production delivery.',
     ],
   },
   {
